@@ -1,0 +1,16 @@
+
+<form action="controlador?accion=validar" method="post">
+Introduzca sus datos si ya es usuario registrado<br>
+Usuario : <input name="login" id="login" type="text" value="" size="30"/><br>
+Clave : <input name="clave" type="password" size="30" value="" /><br>
+<br>
+<input type="button" value="Entrar" onclick="validaUsuario();" name="botEntrar"/>
+<br/>
+<br/>
+<div id="informacion"></div>
+<div id="registro" style="display:none">
+	<br/><br/>
+	<h3>Datos incorrectos</h3>
+	<a href="controlador?accion=solicitud">Regístrate</a>
+</div>
+</form>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0"
+ xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+ <display-name>prFinal</display-name>
+ <context-param>
+  <param-name>ds</param-name>
+  <param-value>java:jboss/datasources/dspffinal</param-value>
+ </context-param>
+ <servlet>
+  <servlet-name>TrackerServlet</servlet-name>
+  <servlet-class>log4jwebtracker.servlet.TrackerServlet</servlet-class>
+ </servlet>
+ <servlet>
+  <display-name>Controlador</display-name>
+  <servlet-name>controlador</servlet-name>
+  <servlet-class>ajaxmvc.controlador.Controlador</servlet-class>
+  <init-param>
+   <param-name>archivoPropiedades</param-name>
+   <param-value>acciones.dat</param-value>
+  </init-param>
+  <init-param>
+   <description>sentencias sql</description>
+   <param-name>archivoSql</param-name>
+   <param-value>sql.properties</param-value>
+  </init-param>
+  <init-param>
+   <param-name>archivo-config-log4j</param-name>
+   <param-value>/WEB-INF/log4j.xml</param-value>
+  </init-param>
+  <multipart-config>
+   <location>/tmp</location>
+   <max-file-size>20848820</max-file-size>
+   <max-request-size>418018841</max-request-size>
+   <file-size-threshold>1048576</file-size-threshold>
+  </multipart-config>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>TrackerServlet</servlet-name>
+  <url-pattern>/tracker/*</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>controlador</servlet-name>
+  <url-pattern>/controlador</url-pattern>
+ </servlet-mapping>
+ <welcome-file-list>
+  <welcome-file>index.htm</welcome-file>
+  <welcome-file>index.jsp</welcome-file>
+  <welcome-file>default.html</welcome-file>
+  <welcome-file>default.htm</welcome-file>
+  <welcome-file>default.jsp</welcome-file>
+  <welcome-file>/index.jsp</welcome-file>
+ </welcome-file-list>
+ <error-page>
+  <exception-type>java.lang.Exception</exception-type>
+  <location>/gesError.jsp</location>
+ </error-page>
+</web-app>

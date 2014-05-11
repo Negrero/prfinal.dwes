@@ -1,0 +1,9 @@
+validar=ajaxmvc.modelo.acciones.AccionAjaxValidar
+ranking=ajaxmvc.modelo.acciones.AccionAjaxRanking
+registrar=ajaxmvc.modelo.acciones.AccionRegistrar
+solicitud=ajaxmvc.modelo.acciones.AccionSolicitud
+ajaxconcurso=ajaxmvc.modelo.acciones.AccionAjaxConcurso
+grabarranking=ajaxmvc.modelo.acciones.AccionAjaxGrabarRanking
+concurso=ajaxmvc.modelo.acciones.AccionConcurso
+existelogin=ajaxmvc.modelo.acciones.AccionAjaxExisteLogin
+subirarchivo=ajaxmvc.modelo.acciones.AccionArchivo

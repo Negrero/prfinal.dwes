@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE log4j:configuration SYSTEM "dtds/log4j.dtd">  
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"  
+    debug="false">  
+    <appender name="console" class="org.apache.log4j.ConsoleAppender"> 
+    	<param name="target" value="System.out"/> 
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern"  
+                value="%n%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%l] %n%m%n" />  
+        </layout>  
+    </appender>  
+  
+    <appender name="error_file"  
+        class="org.apache.log4j.RollingFileAppender">  
+        <param name="File" value="${jboss.server.log.dir}/tuApplicationNameErrorFile.log" /> 
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern"  
+                value="%n%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%l] %n%m%n" />  
+        </layout>  
+    </appender>  
+  
+    <appender name="debug_file"  class="org.apache.log4j.RollingFileAppender">  
+        <param name="File" value="tuApplicationName.log" />  
+        <param name="MaxFileSize" value="5000000" />  
+        <param name="MaxBackupIndex" value="5" />  
+  
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern"  
+                value="%n%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%l] %n%m%n" />  
+        </layout>  
+    </appender>  
+  
+    <appender name="error_file1"  
+        class="org.apache.log4j.RollingFileAppender">  
+        <param name="File" value="../../tuApplicationNameErrorFile1.log" />  
+        <param name="MaxFileSize" value="2000000" />  
+        <param name="MaxBackupIndex" value="5" />  
+        <param name="Threshold" value="WARN" />  
+  
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern"  
+                value="%n%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%l] %n%m%n" />  
+        </layout>  
+    </appender>  
+      
+    <appender name="error_file2"  
+        class="org.apache.log4j.RollingFileAppender">  
+        <param name="File" value="/tuApplicationNameErrorFile2.log" />  
+        <param name="MaxFileSize" value="2000000" />  
+        <param name="MaxBackupIndex" value="5" />  
+        <param name="Threshold" value="WARN" />  
+  
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern"  
+                value="%n%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%l] %n%m%n" />  
+        </layout>  
+    </appender>  
+    
+    <appender name="consola1" class="org.apache.log4j.ConsoleAppender">
+        <param name="target" value="System.out" />
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{dd MMM yyyy - HH:mm:ss} [%-5p] %c{2} - %m%n" />
+        </layout>
+
+        <filter class="org.apache.log4j.varia.LevelMatchFilter">
+            <param name="LevelToMatch" value="warn" />
+            <param name="AcceptOnMatch" value="false" />
+        </filter>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="info" />
+            <param name="LevelMax" value="error" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+    </appender>
+            
+    <appender name="archivo" class="org.apache.log4j.FileAppender">
+        <param name="file" value="${jboss.server.log.dir}/archivo.log" />
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{DATE} [%-5p] %c{2} - %m%n" />
+        </layout>
+    </appender>
+    
+# -------------------apender HTML
+
+	<appender name="archivo1" class="org.apache.log4j.FileAppender">
+        <param name="file" value="${jboss.server.log.dir}/archivohtml.log" />
+        <layout class="org.apache.log4j.HTMLLayout">
+            <param name="title" value="html" />
+            <param name="locationInfo" value="true" />
+        </layout>
+    </appender>
+
+    <logger name="log4j.xml">
+        <level value="trace" />
+        <appender-ref ref="archivo" />
+    </logger>
+    
+    <root>
+        <priority value="trace" />
+         <appender-ref ref="archivo" />
+         <appender-ref ref="archivo1" />
+        <appender-ref ref="consola1"/>
+       
+    </root>
+  
+</log4j:configuration>  
