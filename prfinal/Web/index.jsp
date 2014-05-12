@@ -137,6 +137,30 @@
 		el.appendChild(document.createTextNode(md5(txt)));
 		
 	}
+	function seleccionado(){ 
+
+		var archivos = document.getElementById("archivos");//Damos el valor del input tipo file
+		var archivo = archivos.files; //Obtenemos el valor del input (los arcchivos) en modo de arreglo
+
+		var data = new FormData();
+
+		//Como no sabemos cuantos archivos subira el usuario, iteramos la variable y al
+		//objeto de FormData con el metodo "append" le pasamos calve/valor, usamos el indice "i" para
+		//que no se repita, si no lo usamos solo tendra el valor de la ultima iteración
+		for(var i=0; i<archivo.length; i++){
+			alert(archivo[i]);
+		   data.append('archivo'+i,archivo[i]);
+		}
+		//url, funcion, funcionError, metodo, parametros, contentType
+		var cargador = new net.CargadorContenidos("controlador?accion=subirarchivo", muestraarchivo,null,"POST",data, false);
+		
+		
+		}
+		function muestraarchivo(){
+			var respuesta=this.req.responseText;
+		      respuesta=respuesta.trim();
+		      alert(respuesta);
+			}
 </script>
 </head>
 <body >

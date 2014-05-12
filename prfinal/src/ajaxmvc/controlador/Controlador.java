@@ -225,8 +225,13 @@ public class Controlador extends HttpServlet {
 			
 		} catch (BeanError e) {
 			// TODO Auto-generated catch block
-			log.error("accion no existe es null");
+			log.error("accion no existe es null"+e.getStackTrace()[0].toString());
 			gesError(null,e, request,	response);
+		}catch (NullPointerException npe){
+			log.error("NullPointerException "+npe.getStackTrace()[0].toString());
+			npe.printStackTrace();
+			
+			
 		}
 
 	}
@@ -249,7 +254,7 @@ public class Controlador extends HttpServlet {
     RequestDispatcher rd = request.getRequestDispatcher(vistaError);
     request.setAttribute("error",excepcion);
     rd.forward(request,response);
-    log.error(excepcion,excepcion.getCause());
+    log.error(excepcion+" "+excepcion.getStackTrace()[0].toString());
     //para lanzar error 500 para capturarlo con ajax
     throw new ServletException(excepcion);
     

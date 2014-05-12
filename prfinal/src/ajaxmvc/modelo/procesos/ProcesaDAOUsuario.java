@@ -14,6 +14,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import javax.json.*;
 import javax.sql.DataSource;
 import java.util.Collection;
 
@@ -170,45 +171,92 @@ public class ProcesaDAOUsuario {
 	}
 		
 			
-			/** 
-			 * Devuelve true si hay 3 o mas fotogramas del listado total de fotogrmas menos
-			 * el total de fotogramas que hayan concursado de un usuario dado
-			 */
-			public boolean hayFotogramaConcurso(String login){
 			
-						boolean hay = false;
-						Connection conBD = null;
-						Statement st = null;
-						ResultSet rs = null;
-						String sentenciaSQL = null;
-					
-						sentenciaSQL = "SELECT count(*) as hay FROM fotogramas where idFotogramas not in (select idfotograma from concurso where login='"+login+"' )";
+			public boolean setGrabaArchivo(String attribute,Archivo archivo) throws BeanError {
+				// TODO Auto-generated method stub
+				
+				boolean registrado = false;
+				Connection conBD = null;
+				PreparedStatement ps=null;
+				try {
+		        	conBD = ds.getConnection();
+		        	//resgistrarusuario = insert into usuario(login,clave,email) values(?,?,?)
+		        	ps = conBD.prepareStatement(this.sql.getProperty("grabararchivo"));
+		        		
+		        		ps.setString(1, attribute);
+		            	ps.setBlob(2, archivo.getFichero());
+		            	ps.setString(3, archivo.getNombre_fichero());
+		            	int rs = ps.executeUpdate();
+		            	if (rs>0){
+		            		registrado=true;
+		            	}else{
+		            		throw new BeanError(1,"error al introducir al grabar archivo en base de datos");
+		            	}
+		        	    	
+
+		        	
+		        }
+		        catch(SQLException sqle) {
+		    
+		        	throw new BeanError(1,sqle.getMessage());
+		        	
+		        }
+				finally {
+					if (conBD!=null)
 						try {
-				        	conBD = ds.getConnection();
-				        	st = conBD.createStatement();
-				        	rs = st.executeQuery(sentenciaSQL);
-				        	rs.next();
-				        	if (rs.getInt("hay")>=3){
-				        		hay=true;
-				        	}
-				        
-				        }
-				        catch(Exception excepcion) {
-				        	excepcion.printStackTrace();
-				        }
-						finally {
-							if (conBD!=null)
-								try {
-									conBD.close();
-								}
-								catch(SQLException sqle)
-								{
-									System.out.println(sqle);
-								}
-						}	
-					
-						return hay;	
-					 }
+							conBD.close();
+						}
+						catch(SQLException sqle)
+						{
+							System.out.println(sqle);
+						}
+				}	
+				return registrado;
+			}
+			
+			
+			public ArrayList getListaArchivo(String attribute) throws BeanError {
+				// TODO Auto-generated method stub
+				Connection conBD = null;
+				PreparedStatement ps=null;
+				ArrayList<Archivo> lista = new ArrayList<Archivo>();
+				
+				try {
+		        	conBD = ds.getConnection();
+		        	// select nombre from archivos where login=?
+		        	ps = conBD.prepareStatement(this.sql.getProperty("listaarchivo"));
+		        	
+		        		ps.setString(1, attribute);
+		            	ResultSet rs = ps.executeQuery();
+		           
+		            	while (rs.next()){
+		            		String cadena=rs.getString("nombre");
+		            		Archivo archivo=new Archivo(rs.getString("nombre"),rs.getBlob("archivo").getBinaryStream());
+		            		lista.add(archivo);
+		            	}
+		        	    
+
+		        	
+		        }
+		        catch(SQLException sqle) {
+		    
+		        	throw new BeanError(1,sqle.getMessage()+" en clase: "+this.getClass().getSimpleName()+
+		        			" y metodo: registrarUsuario",sqle);
+		        	
+		        }
+				finally {
+					if (conBD!=null)
+						try {
+							conBD.close();
+						}
+						catch(SQLException sqle)
+						{
+							System.out.println(sqle);
+						}
+				}	
+				return lista;
+			}
+			
 		
 		
 			

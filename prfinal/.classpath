@@ -15,6 +15,5 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="com.soyatec.uml.CONTAINER"/>
 	<classpathentry kind="con" path="org.jboss.ide.eclipse.as.classpath.core.j2ee-1.4"/>
-	<classpathentry kind="lib" path="/home/negrero/herramientas/sdk7/lib/javax.json-api-1.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

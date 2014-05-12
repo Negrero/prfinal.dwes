@@ -1,7 +1,12 @@
 <form action="controlador?accion=subirarchivo"   method="post" id="registrar" enctype="multipart/form-data">          
-Subir archivo:<input type="file" name="archivos" id="archivos" multiple="multiple"  formmethod="post" formenctype="multipart/form-data" required="required">
-
+Subir archivo:<input type="file" name="archivoss" id="archivoss" multiple="multiple"  formmethod="post" formenctype="multipart/form-data" required="required">
 <input type="submit" value="subir archivos"/>
 </form>
 
-
+<div id="subir">
+			<input id="archivos" type="file" name="archivos[]" multiple="multiple" onchange="seleccionado();" />
+			
+		</div>
+		<div id="cargados">
+			<!-- Aqui van los archivos cargados -->
+		</div>

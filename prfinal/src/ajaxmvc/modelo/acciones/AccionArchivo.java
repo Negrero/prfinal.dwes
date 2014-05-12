@@ -95,40 +95,16 @@ public class AccionArchivo implements Accion {
 		this.vista=this.vistaOk;
 		
 		//this.uploadFile(request, response);
-		System.out.println("uri"+request.getContentLength());
-		System.out.println("uri"+request.getPart("archivos").getSize());
-		System.out.println("uri"+request.getParts().toArray());
-		System.out.println("uri"+request.getContextPath());
-		 Object[] lista = request.getParts().toArray();
-		System.out.println(lista.length);
-		
+
+		Collection<Part> partes = request.getParts();
+		System.out.println(partes.size());
+		for (Part trozo:partes){
+			System.out.println(getFileName(trozo));
+			
+		}
 		 String resp = "";
 		
-	        int i = 1;
-	        resp += "<br>Here is information about uploaded files.<br>";
-	        try {
-	            MultipartParser parser = new MultipartParser(request, 1024 * 1024 * 1024);  /* file limit size of 1GB*/
-	            Part _part;
-	            System.out.println("size de parte");
-	            while ((_part = (Part) parser.readNextPart()) != null) {
-	            
-	                if (((File) _part).isFile()) {
-	                    FilePart fPart = (FilePart) _part;  // get some info about the file
-	                    String name = fPart.getFileName();
-	                    if (name != null) {
-	                       
-	                    	
-	                        System.out.println("nombre archivo:"+name);
-	                    } else {
-	                        resp = "<br>The user did not upload a file for this part.";
-	                    }
-	                }
-	            }// end while 
-	        } catch (java.io.IOException ioe) {
-	            resp = ioe.getMessage();
-	        }
 	        
-	        System.out.println("respuesta:"+resp);
 		
 		return true;
 	}

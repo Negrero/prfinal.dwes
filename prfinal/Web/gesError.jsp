@@ -16,7 +16,7 @@ Se ha producido un error.<br>
 El mensaje de la excepción es: <%=err.getMensError()%> <br>
 El código de error es: <%=err.getCodError()%><br>
 Aquí mostrar un botón para volver al inicio de la aplicación.
-<form action="controlador" method="post">
+<form action="index.jsp" method="post">
 	<input type="hidden" name="accion" value="volver"/>
 	<input type="submit" name="aceptar" value="Volver"/>
 	
