@@ -7,3 +7,4 @@ grabarranking=ajaxmvc.modelo.acciones.AccionAjaxGrabarRanking
 concurso=ajaxmvc.modelo.acciones.AccionConcurso
 existelogin=ajaxmvc.modelo.acciones.AccionAjaxExisteLogin
 subirarchivo=ajaxmvc.modelo.acciones.AccionArchivo
+login=ajaxmvc.modelo.acciones.AccionAjaxLogin

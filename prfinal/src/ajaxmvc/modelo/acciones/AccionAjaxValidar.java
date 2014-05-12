@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import ajaxmvc.modelo.beans.BeanError;
-import ajaxmvc.modelo.beans.Errores;
+
 import ajaxmvc.modelo.beans.ModeloAjax;
 import ajaxmvc.modelo.procesos.*;
 import ajaxmvc.controlador.Accion;

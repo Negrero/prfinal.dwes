@@ -13,7 +13,7 @@ import javax.servlet.http.*;
 import javax.sql.*;
 
 import ajaxmvc.modelo.beans.BeanError;
-import ajaxmvc.modelo.beans.Errores;
+
 
 /** 
  * Interfaz que implementarán todas las acciones.

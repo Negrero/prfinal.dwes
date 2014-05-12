@@ -40,7 +40,32 @@
 			}
 	      
 	}
-	
+	function existeLoginentrar(){
+		formulario=document.getElementById("loguear");
+		
+		if (ValidaCampos(formulario)){
+			var parametros="accion=login&login="+formulario.loginentrar.value+"&clave="+formulario.claveentrar.value;
+			 var cargador = new net.CargadorContenidos("controlador", muestraloginentrar,null,"POST",parametros, "application/x-www-form-urlencoded");
+			 
+		}
+		
+		
+	}
+	function muestraloginentrar(){
+			
+	      var respuesta=this.req.responseText;
+	      respuesta=respuesta.trim();
+	     
+	      if (respuesta=="principalUsuario.jsp"){
+	    	 
+			  window.document.location=respuesta;   
+		  }else{
+			  document.getElementById("entrarlogin.error").style.display="block";
+			  
+			}
+			
+	      
+	}
 	var reader; //GLOBAL File Reader object for demo purpose only
 
     /**

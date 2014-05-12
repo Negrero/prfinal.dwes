@@ -1,7 +1,8 @@
 
 
 function ValidaCampos(formulario){	
-	var lista=document.getElementsByTagName("input");
+	var lista=formulario.getElementsByTagName("input");
+
 	// recorre los inputs del formulario que tengan el atributo expresion
 	var ok=true;
 	var variable;
@@ -10,7 +11,6 @@ function ValidaCampos(formulario){
 		if(lista[i].title!=null && lista[i].title!=""  ){		
 			if(!validar(lista[i])){
 				ok=false;
-				
 			}
 		}
 	}

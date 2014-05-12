@@ -12,9 +12,16 @@ import sun.security.krb5.internal.crypto.crc32;
  * @author negrero
  *
  */
-public class Archivo extends File {
+public class Archivo extends File implements InterpretaArchivo{
 	
 	
+
+	/** 
+	 * @author negrero
+	 */
+	public interface InterpretaArchivo {
+
+	}
 
 	private crc32 checksum=null;
 	
@@ -37,6 +44,12 @@ public class Archivo extends File {
 		this.checksum=new crc32();
 		
 		this.checksum = checksum;
+	}
+
+	@Override
+	public Object getInterpreta() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
