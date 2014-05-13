@@ -4,6 +4,7 @@
 package ajaxmvc.modelo.beans;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.sql.Time;
@@ -78,8 +79,24 @@ public class Archivo implements InterpretaArchivo{
 
 	@Override
 	public Object getInterpreta() {
-		// TODO Auto-generated method stub
-		return null;
+		byte[] bytes = null;
+		/** Convierte un array de bytes [] en una cadena de caracteres hexadecimal
+		* @param bytes Array de bytes para ser convertidos a hexa
+		* @return Cadena en hexadecimal
+		*/
+		try {
+			this.fichero.read(bytes);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		StringBuffer retString = new StringBuffer();
+		for (int i = 0; i < bytes.length; ++i) {
+		retString.append(
+		Integer.toHexString(0x0100 + (bytes[i] & 0x00FF)).substring(1));
+		}
+		return retString.toString();
+		
 	}
 
 	/**
@@ -185,6 +202,15 @@ public class Archivo implements InterpretaArchivo{
 	 */
 	public void setNombre_fichero(String nombre_fichero) {
 		this.nombre_fichero = nombre_fichero;
+	}
+	
+	public Archivo getFactoriaFichero(){
+		if (this.tipo=="C"){
+			return new FileVehiculo();
+		}else{
+			return new FileConductor();
+		}
+		
 	}
 	
 	

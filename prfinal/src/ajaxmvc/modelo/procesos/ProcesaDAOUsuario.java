@@ -256,6 +256,48 @@ public class ProcesaDAOUsuario {
 				}	
 				return lista;
 			}
+			public ArrayList<Archivo> getListaArchivoSelect(String login,
+					String[] listaselec) throws BeanError {
+				// TODO Auto-generated method stub
+				Connection conBD = null;
+				PreparedStatement ps=null;
+				ArrayList<Archivo> lista = new ArrayList<Archivo>();
+				
+				try {
+		        	conBD = ds.getConnection();
+		        	// select * from archivos where login=? and nombre=?
+		        	ps = conBD.prepareStatement(this.sql.getProperty("selectarchivo"));
+		        	for (String nombre:listaselec){
+		        		ps.setString(1, login);
+		        		ps.setString(2, nombre);
+		            	ResultSet rs = ps.executeQuery();
+		            	if (rs.next()){
+		            		Archivo archivo=new Archivo(rs.getString("nombre"),rs.getBlob("archivo").getBinaryStream());
+		            		lista.add(archivo);
+		            	}
+					}
+		        	    
+
+		        	
+		        }
+		        catch(SQLException sqle) {
+		    
+		        	throw new BeanError(1,sqle.getMessage()+" en clase: "+this.getClass().getSimpleName()+
+		        			" y metodo: registrarUsuario",sqle);
+		        	
+		        }
+				finally {
+					if (conBD!=null)
+						try {
+							conBD.close();
+						}
+						catch(SQLException sqle)
+						{
+							System.out.println(sqle);
+						}
+				}	
+				return lista;
+			}
 			
 		
 		

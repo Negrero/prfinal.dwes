@@ -30,6 +30,7 @@ function accion(id){
 		}
 		document.getElementById(id.name).style.display="block";
 	}
+	
 	window.onload=function iniciar(){
 		
 		var loginsesion="<%= request.getSession().getAttribute("login")%>";
@@ -43,10 +44,12 @@ function accion(id){
 			listaarchivo();
 		}
 	}
+	
 	function listaarchivo(){
 		var parametros="accion=listaarchivo&login="+"<%= request.getSession().getAttribute("login")%>";
 		var cargador = new net.CargadorContenidos("controlador", muestralistaarchivo,null,"POST",parametros, "application/x-www-form-urlencoded");
 	}
+	
 	function muestralistaarchivo(){
 		var listaconductor=document.getElementById("listaArchivoconductor");
 		var listavehiculo=document.getElementById("listaArchivovehiculo");
@@ -60,7 +63,6 @@ function accion(id){
 		      	opcion.value=respuesta[i].nombre;
 		      	texto=document.createTextNode(respuesta[i].nombre);
 		      	opcion.appendChild(texto);
-		      	alert(respuesta[i].tipo);
 		      	if(respuesta[i].tipo=="C"){
 		      		listaconductor.appendChild(opcion);
 		      	}else{
@@ -74,11 +76,44 @@ function accion(id){
 	}
 	
 	function selectArchivo(select){
-		lista=select
-		for (var i=0;i<lista.options.length;i++){
-			if (lista.options[i].selected)
-				alert(lista[i].value);
+		
+		var data="";
+		for (var i=0;i<select.options.length;i++){
+			if (select.options[i].selected)
+				alert(select[i].value);
+				data+="&nombrearchivo="+select[i].value;		
 		}
+		alert(data);
+		//(url, funcion, funcionError, metodo, parametros, contentType )
+		var cargador = new net.CargadorContenidos("controlador?accion=interpretar", mostrarSelect,null,"POST",data, "application/x-www-form-urlencoded");
+	}
+	function mostrarSelect(){
+		var respuesta=eval(this.req.responseText);
+	      //respuesta=respuesta.trim();
+	      tabaconductor=document.getElementById("tablaconductor").tbody[0];
+	      tabavehiculo=document.getElementById("tablavehiculo").tbody[0];
+	      
+	      for(var i=0;i<respuesta.length;i++){
+		      
+		      	alert(i);
+		      
+		      	if(respuesta[i].tipo=="C"){
+		      		fila=tablaconductor.rows.length+1;
+		      		tablaconductor.insertRow(fila);
+		      		tablaconductor.rows[fila].insertCell(0);
+		      		tablaconductor.rows[fila].insertCell(1);
+		      		tabalaconductor.rows[fila].cell[0].innerHTML=respuesta[i].nombre;
+		      		tabalaconductor.rows[fila].cell[1].innerHTML=respuesta[i].DatosInterpretados;
+		      	}else{
+		      		fila=tablavehiculo.rows.length+1;
+		      		tablavehiculo.insertRow(fila);
+		      		tablavehiculo.rows[fila].insertCell(0);
+		      		tablavehiculo.rows[fila].insertCell(1);
+		      		tabalavehiculo.rows[fila].cell[0].innerHTML=respuesta[i].nombre;
+		      		tabalavehiculo.rows[fila].cell[1].innerHTML=respuesta[i].DatosInterpretados;
+		      	}
+	      	
+	      }
 	}
 	
 	
@@ -96,7 +131,7 @@ function accion(id){
 			
 		   data.append('archivo'+i,archivo[i]);
 		}
-		//url, funcion, funcionError, metodo, parametros, contentType
+		//url, funcion, funcionError, metodo, parametros, contentType OJO CONTENTYPE A FALSE para poder subir mas de un archivo
 		var cargador = new net.CargadorContenidos("controlador?accion=grabararchivosusuario", muestraarchivo,null,"POST",data, false);
 		
 		
@@ -104,7 +139,6 @@ function accion(id){
 		function muestraarchivo(){
 			var respuesta=this.req.responseText;
 		      respuesta=respuesta.trim();
-		      
 		      listaarchivo();
 			}
 </script>
@@ -136,7 +170,10 @@ function accion(id){
 			
 		</div>
 		<div id="interpretar"  style="display:none" name="submenu">
-			<div id="interpretados"></div>
+			<div id="interpretados">
+				<table name="tablaconductor" id="tablavehiculo"><tbody></tbody></table>
+				<table name="tablavehiculo" id="tablavehiculo"><tbody></tbody></table>
+			</div>
 		</div>
 	</div>
 	<div id="der">
