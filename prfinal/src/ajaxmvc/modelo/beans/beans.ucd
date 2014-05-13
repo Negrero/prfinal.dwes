@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="beans" size="991,356" id="ajaxmvc.modelo.beans" metadata="uml2-1.0" initialized="true" scrolledY="1" tag="1000" key="32303037303533312D3130303020707266696E616C2F6E65677265726F">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.5/@sourceConnections.0 //@children.4/@sourceConnections.1 //@children.5/@sourceConnections.1" name="Archivo" location="640,50" size="137,266" id="ajaxmvc.modelo.beans/Archivo" runTimeClassModel="hora,getChecksum(),getInterpreta(),setHora(Ljava.lang.String;),setChecksum(Lsun.security.krb5.internal.crypto.crc32;),fecha,Archivo(),setFecha(Ljava.lang.String;),getExtension(),getHora(),checksum,getFecha()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="114,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="checksum" id="ajaxmvc.modelo.beans/Archivo#checksum"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hora" id="ajaxmvc.modelo.beans/Archivo#hora"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fecha" id="ajaxmvc.modelo.beans/Archivo#fecha"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="107,162">
+      <children xsi:type="editmodel:MethodEditModel" name="Archivo" id="ajaxmvc.modelo.beans/Archivo#Archivo(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getChecksum" id="ajaxmvc.modelo.beans/Archivo#getChecksum()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setChecksum" id="ajaxmvc.modelo.beans/Archivo#setChecksum(Lsun.security.krb5.internal.crypto.crc32;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInterpreta" id="ajaxmvc.modelo.beans/Archivo#getInterpreta()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setHora" id="ajaxmvc.modelo.beans/Archivo#setHora(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setFecha" id="ajaxmvc.modelo.beans/Archivo#setFecha(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getFecha" id="ajaxmvc.modelo.beans/Archivo#getFecha()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getExtension" id="ajaxmvc.modelo.beans/Archivo#getExtension()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getHora" id="ajaxmvc.modelo.beans/Archivo#getHora()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ajaxmvc.modelo.beans/Archivo-Soyatec::Implement->ajaxmvc.modelo.beans/InterpretaArchivo" source="//@children.0" target="//@children.6" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="74,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="137,40" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,40"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="BeanError" location="227,50" size="162,140" id="ajaxmvc.modelo.beans/BeanError" runTimeClassModel="mensError,BeanError(ILjava.lang.String;),excepcion,codError,BeanError(ILjava.lang.String;Ljava.lang.Exception;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="139,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="codError" id="ajaxmvc.modelo.beans/BeanError#codError"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="excepcion" id="ajaxmvc.modelo.beans/BeanError#excepcion"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mensError" id="ajaxmvc.modelo.beans/BeanError#mensError"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="89,36">
+      <children xsi:type="editmodel:MethodEditModel" name="BeanError" id="ajaxmvc.modelo.beans/BeanError#BeanError(ILjava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="BeanError" id="ajaxmvc.modelo.beans/BeanError#BeanError(ILjava.lang.String;Ljava.lang.Exception;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ModeloAjax" location="439,50" size="151,122" id="ajaxmvc.modelo.beans/ModeloAjax" runTimeClassModel="ModeloAjax(Ljava.lang.String;Ljava.lang.String;),ModeloAjax(),contentType,respuesta">
+    <children xsi:type="editmodel:CompartmentEditModel" size="128,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="contentType" id="ajaxmvc.modelo.beans/ModeloAjax#contentType"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="respuesta" id="ajaxmvc.modelo.beans/ModeloAjax#respuesta"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="96,36">
+      <children xsi:type="editmodel:MethodEditModel" name="ModeloAjax" id="ajaxmvc.modelo.beans/ModeloAjax#ModeloAjax()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ModeloAjax" id="ajaxmvc.modelo.beans/ModeloAjax#ModeloAjax(Ljava.lang.String;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Usuario" location="50,50" size="127,194" id="ajaxmvc.modelo.beans/Usuario" runTimeClassModel="nombre,getEmail(),Usuario(),email,Usuario(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),setEmail(Ljava.lang.String;),login,clave">
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="clave" id="ajaxmvc.modelo.beans/Usuario#clave"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="email" id="ajaxmvc.modelo.beans/Usuario#email"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="login" id="ajaxmvc.modelo.beans/Usuario#login"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nombre" id="ajaxmvc.modelo.beans/Usuario#nombre"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="80,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Usuario" id="ajaxmvc.modelo.beans/Usuario#Usuario()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Usuario" id="ajaxmvc.modelo.beans/Usuario#Usuario(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getEmail" id="ajaxmvc.modelo.beans/Usuario#getEmail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setEmail" id="ajaxmvc.modelo.beans/Usuario#setEmail(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="FileConductor" location="525,375" size="143,194" id="ajaxmvc.modelo.beans/FileConductor" runTimeClassModel="getTipo(),getTarjeta(),pais,setPais(Ljava.lang.String;),setTarjeta(Ljava.lang.String;),getPais(),FileConductor(),tarjeta">
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="pais" id="ajaxmvc.modelo.beans/FileConductor#pais"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tarjeta" id="ajaxmvc.modelo.beans/FileConductor#tarjeta"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="107,108">
+      <children xsi:type="editmodel:MethodEditModel" name="setTarjeta" id="ajaxmvc.modelo.beans/FileConductor#setTarjeta(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="FileConductor" id="ajaxmvc.modelo.beans/FileConductor#FileConductor()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPais" id="ajaxmvc.modelo.beans/FileConductor#getPais()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTarjeta" id="ajaxmvc.modelo.beans/FileConductor#getTarjeta()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPais" id="ajaxmvc.modelo.beans/FileConductor#setPais(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipo" id="ajaxmvc.modelo.beans/FileConductor#getTipo()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="ajaxmvc.modelo.beans/Archivo&lt;-ajaxmvc.modelo.beans/FileConductor" source="//@children.4" target="//@children.0" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="128,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="13,266"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ajaxmvc.modelo.beans/FileConductor-Standard::Derive->ajaxmvc.modelo.beans/Archivo" source="//@children.4" target="//@children.0" targetEnd="//@children.4/@sourceConnections.1/@children.2" label="//@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="51,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="108,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,261"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="FileVehiculo" location="765,390" size="136,194" id="ajaxmvc.modelo.beans/FileVehiculo" runTimeClassModel="getTipo(),getMatricula(),pais,setPais(Ljava.lang.String;),FileVehiculo(),setMatricula(Ljava.lang.String;),getPais(),matricula">
+    <children xsi:type="editmodel:CompartmentEditModel" size="113,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="pais" id="ajaxmvc.modelo.beans/FileVehiculo#pais"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="matricula" id="ajaxmvc.modelo.beans/FileVehiculo#matricula"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="100,108">
+      <children xsi:type="editmodel:MethodEditModel" name="getPais" id="ajaxmvc.modelo.beans/FileVehiculo#getPais()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPais" id="ajaxmvc.modelo.beans/FileVehiculo#setPais(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setMatricula" id="ajaxmvc.modelo.beans/FileVehiculo#setMatricula(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMatricula" id="ajaxmvc.modelo.beans/FileVehiculo#getMatricula()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipo" id="ajaxmvc.modelo.beans/FileVehiculo#getTipo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="FileVehiculo" id="ajaxmvc.modelo.beans/FileVehiculo#FileVehiculo()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="ajaxmvc.modelo.beans/Archivo&lt;-ajaxmvc.modelo.beans/FileVehiculo" source="//@children.5" target="//@children.0" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="5,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="130,266"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ajaxmvc.modelo.beans/FileVehiculo-Standard::Derive->ajaxmvc.modelo.beans/Archivo" source="//@children.5" target="//@children.0" targetEnd="//@children.5/@sourceConnections.1/@children.2" label="//@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="51,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="25,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="137,251"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.0" name="InterpretaArchivo" location="960,50" size="170,81" id="ajaxmvc.modelo.beans/InterpretaArchivo" runTimeClassModel="getInterpreta()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,18">
+      <children xsi:type="editmodel:MethodEditModel" name="getInterpreta" id="ajaxmvc.modelo.beans/InterpretaArchivo#getInterpreta()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=7;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
