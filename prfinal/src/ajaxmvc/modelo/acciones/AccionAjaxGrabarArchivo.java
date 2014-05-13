@@ -5,7 +5,9 @@ package ajaxmvc.modelo.acciones;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -45,24 +47,50 @@ public class AccionAjaxGrabarArchivo implements Accion {
 		
 		Collection<Part> partes = request.getParts();
 		ProcesaDAOUsuario db=new ProcesaDAOUsuario(this.ds,this.sql);
+		HashMap<String,String> listaarchivosubido=new HashMap();
 		this.Modelo=new ModeloAjax();
 		
 		for (Part trozo:partes){
 			if(trozo!=null){
 				Archivo archivo=new Archivo(getNombreArchivo(trozo),trozo.getInputStream());
-				try {
-					db.setGrabaArchivo((String) request.getSession().getAttribute("login"),archivo);
-					System.out.println("nombre fichero:"+getNombreArchivo(trozo));
-				} catch (BeanError e) {
-					// TODO Auto-generated catch block
-					this.error=e;
-					return false;
+				if (archivo.isArchivo()){
+					try {
+						
+						listaarchivosubido.put(archivo.getNombre_fichero(), db.setGrabaArchivo((String) request.getSession().getAttribute("login"),archivo));
+						System.out.println("nombre fichero:"+getNombreArchivo(trozo));
+					} catch (BeanError e) {
+						// TODO Auto-generated catch block
+						this.error=e;
+						return false;
+					}
+				}else{
+					listaarchivosubido.put(getNombreArchivo(trozo),"formato de archivo incorrecto(boe 105 del 3/5/2005 pag 15128)");
 				}
 			}	
 		}
-		this.Modelo.setRespuesta("todo correcto");
+		
+		this.Modelo.setRespuesta(preparerarModelo(listaarchivosubido));
+		this.Modelo.setContentType("text/html; charset=UTF-8");	
 		return true;
 	}
+	
+	private Object preparerarModelo(HashMap<String, String> listaarchivosubido) {
+		
+		StringBuilder objJSON = new StringBuilder("[");
+		
+		for (String nombre:listaarchivosubido.keySet()) {
+			
+			objJSON.append("{nombre:'");
+			objJSON.append(nombre);
+			objJSON.append("',mensaje:'");
+			objJSON.append(listaarchivosubido.get(nombre));
+			objJSON.append("'},");
+		}
+		objJSON.replace(objJSON.length()-1, objJSON.length(), "]");
+	
+		return objJSON.toString();
+	}
+
 	private String getNombreArchivo(Part part){
 		  Pattern p = Pattern.compile("filename=\"(.+?)\"");
 		  Matcher m = p.matcher(part.getHeader("Content-Disposition"));

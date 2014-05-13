@@ -18,8 +18,35 @@
 }
 #contenido {
 	margin:auto;
-	width:900px;
+	width:1200px;
+
 }
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	float:left;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+table thead { display:block; }
+#informacion
 </style>
 <script type="text/javascript">
 function accion(id){
@@ -49,6 +76,8 @@ function accion(id){
 		var parametros="accion=listaarchivo&login="+"<%= request.getSession().getAttribute("login")%>";
 		var cargador = new net.CargadorContenidos("controlador", muestralistaarchivo,null,"POST",parametros, "application/x-www-form-urlencoded");
 	}
+	
+	
 	
 	function muestralistaarchivo(){
 		var listaconductor=document.getElementById("listaArchivoconductor");
@@ -80,37 +109,52 @@ function accion(id){
 		var data="";
 		for (var i=0;i<select.options.length;i++){
 			if (select.options[i].selected)
-				alert(select[i].value);
 				data+="&nombrearchivo="+select[i].value;		
 		}
-		alert(data);
+		if (select.id=="listaArchivoconductor"){
+			document.getElementById("tablaconductor").tBodies[0].innerHTML="<tr><th scope='col'>Nombre Archivo</th><th scope='col'>Archivo en hexadecimal</th></tr>";
+		}else{
+			document.getElementById("tablavehiculo").tBodies[0].innerHTML="<tr><th scope='col'>Nombre Archivo</th><th scope='col'>Archivo en hexadecimal</th></tr>";;
+		}
 		//(url, funcion, funcionError, metodo, parametros, contentType )
 		var cargador = new net.CargadorContenidos("controlador?accion=interpretar", mostrarSelect,null,"POST",data, "application/x-www-form-urlencoded");
 	}
+	
+	
 	function mostrarSelect(){
 		var respuesta=eval(this.req.responseText);
-	      //respuesta=respuesta.trim();
-	      tabaconductor=document.getElementById("tablaconductor").tbody[0];
-	      tabavehiculo=document.getElementById("tablavehiculo").tbody[0];
-	      
-	      for(var i=0;i<respuesta.length;i++){
-		      
-		      	alert(i);
-		      
+	      //Datos json devuelto por el servidor:
+	      //[{nombre:'C_E34055105V000000_E_20080401_1710.TGD,tipo:'C',datosInterpretados:'.....................'}]
+	      tablaconductor=document.getElementById("tablaconductor");
+	      tablavehiculo=document.getElementById("tablavehiculo");
+	      var fila=0;
+	      for(var i=0;i<respuesta.length;i++){	
 		      	if(respuesta[i].tipo=="C"){
-		      		fila=tablaconductor.rows.length+1;
-		      		tablaconductor.insertRow(fila);
-		      		tablaconductor.rows[fila].insertCell(0);
-		      		tablaconductor.rows[fila].insertCell(1);
-		      		tabalaconductor.rows[fila].cell[0].innerHTML=respuesta[i].nombre;
-		      		tabalaconductor.rows[fila].cell[1].innerHTML=respuesta[i].DatosInterpretados;
+		      		tablaconductor.style.display="block";
+		      		fila=tablaconductor.tBodies[0].rows.length;
+		      		tablaconductor.tBodies[0].insertRow(fila);
+		      		tablaconductor.tBodies[0].rows[fila].insertCell(0);
+		      		tablaconductor.tBodies[0].rows[fila].insertCell(1);
+		      		tablaconductor.tBodies[0].rows[fila].cells[0].innerHTML=respuesta[i].nombre;
+		      		texto=document.createTextNode(respuesta[i].datosInterpretados);
+		      		div=document.createElement("div");
+		      		div.style.overflow="auto";
+		      		div.style.height="200px";
+		      		div.appendChild(texto);
+		      		tablaconductor.tBodies[0].rows[fila].cells[1].appendChild(div);		
 		      	}else{
-		      		fila=tablavehiculo.rows.length+1;
-		      		tablavehiculo.insertRow(fila);
-		      		tablavehiculo.rows[fila].insertCell(0);
-		      		tablavehiculo.rows[fila].insertCell(1);
-		      		tabalavehiculo.rows[fila].cell[0].innerHTML=respuesta[i].nombre;
-		      		tabalavehiculo.rows[fila].cell[1].innerHTML=respuesta[i].DatosInterpretados;
+		      		tablavehiculo.style.display="block";
+		      		fila=tablavehiculo.tBodies[0].rows.length;
+		      		tablavehiculo.tBodies[0].insertRow(fila);
+		      		tablavehiculo.tBodies[0].rows[fila].insertCell(0);
+		      		tablavehiculo.tBodies[0].rows[fila].insertCell(1);
+		      		texto=document.createTextNode(respuesta[i].datosInterpretados);
+		      		div=document.createElement("div");
+		      		div.style.overflow="auto";
+		      		div.style.height="200px";
+		      		div.appendChild(texto);
+		      		tablavehiculo.tBodies[0].rows[fila].cells[0].innerHTML=respuesta[i].nombre;
+		      		tablavehiculo.tBodies[0].rows[fila].cells[1].appendChild(div);
 		      	}
 	      	
 	      }
@@ -137,9 +181,24 @@ function accion(id){
 		
 		}
 		function muestraarchivo(){
-			var respuesta=this.req.responseText;
-		      respuesta=respuesta.trim();
-		      listaarchivo();
+			var respuesta=eval(this.req.responseText);
+			var tabla=document.getElementById("tablainfo");
+			for (var i in respuesta){
+		     		fila=tabla.tBodies[0].rows.length;
+		     		tabla.tBodies[0].insertRow(fila);
+		     		tabla.tBodies[0].rows[fila].insertCell(0);
+		      		tabla.tBodies[0].rows[fila].insertCell(1);
+		      		tabla.tBodies[0].rows[fila].cells[0].innerHTML=respuesta[i].nombre;
+		      		texto=document.createTextNode(respuesta[i].mensaje);
+		      		div=document.createElement("div");
+		      		div.style.overflow="auto";
+		      	
+		      		div.appendChild(texto);
+		      		tabla.tBodies[0].rows[fila].cells[1].appendChild(div);	
+		      		if 	(respuesta[i].mensaje!="correcto")
+		      			tabla.tBodies[0].rows[fila].cells[1].style.color="red";
+		     
+		     }
 			}
 </script>
 
@@ -151,33 +210,45 @@ function accion(id){
 	<h1>Sesion iniciada por :<%=request.getSession().getAttribute("login") %></h1>
 	<div id="izq">
 		<fieldset>
-			<legend>Archivos de conductor</legend>
+			<legend>Archivos de conductor(multiselect tecla ctrl)</legend>
 			<select id="listaArchivoconductor" name="listaArchivoconductor[]" multiple  onchange="selectArchivo(this)" style="height: 197px; width: 248px; ">	</select>
 		</fieldset>
 		<fieldset>
-			<legend>Archivos de vehiculo</legend>
+			<legend>Archivos de vehiculo (multiselect tecla ctrl)</legend>
 			<select id="listaArchivovehiculo" name="listaArchivovehiculo[]" multiple  onchange="selectArchivo(this)" style="height: 197px; width: 248px; ">	</select>
 		</fieldset>
 		
 		
 		<br>
 		<button onclick="accion(this)" name="subir">Subir</button><br>
-		<button onclick="accion(this)" name="interpretar">Interpretar</button>
+		
 		<div id="subir"  style="display:none" name="submenu">
-			        
 				Subir archivo:<input id="archivos" type="file" name="archivos[]" multiple="multiple" onchange="seleccionado();"  accept="application/TGD"/>
 				<input type="submit" value="subir archivos"/>
-			
 		</div>
 		<div id="interpretar"  style="display:none" name="submenu">
-			<div id="interpretados">
-				<table name="tablaconductor" id="tablavehiculo"><tbody></tbody></table>
-				<table name="tablavehiculo" id="tablavehiculo"><tbody></tbody></table>
-			</div>
 		</div>
 	</div>
+	
 	<div id="der">
-	arhcivo
+	<!-- ********************************************** Cuadro de archivos interpretados ******************************** -->
+		<div id="interpretados" >
+				<table name="tablaconductor" id="tablaconductor" class="gridtable" style="display:none">
+					<caption><h2>Archivos de conductores</h2></caption>
+					<tbody></tbody>
+				</table>
+			
+				<table name="tablavehiculo" id="tablavehiculo" class="gridtable" style="display:none">
+					<caption><h2>Archivos de vehiculos</h2></caption>
+					<tbody></tbody>
+				</table>
+		</div>
+		<div id="informacion">
+			<table name="tablainfo" id="tablainfo" class="gridtable">
+					<caption>Informacion archivos subidos</caption>
+					<tbody></tbody>
+				</table>
+		</div>
 	</div>
 </div>
 

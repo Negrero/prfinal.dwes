@@ -172,29 +172,36 @@ public class ProcesaDAOUsuario {
 		
 			
 			
-			public boolean setGrabaArchivo(String attribute,Archivo archivo) throws BeanError {
+			public String setGrabaArchivo(String login,Archivo archivo) throws BeanError {
 				// TODO Auto-generated method stub
 				
 				boolean registrado = false;
 				Connection conBD = null;
 				PreparedStatement ps=null;
+				String msgerror="correcto";
 				try {
 		        	conBD = ds.getConnection();
-		        	//resgistrarusuario = insert into usuario(login,clave,email) values(?,?,?)
-		        	ps = conBD.prepareStatement(this.sql.getProperty("grabararchivo"));
-		        		
-		        		ps.setString(1, attribute);
-		            	ps.setBlob(2, archivo.getFichero());
-		            	ps.setString(3, archivo.getNombre_fichero());
-		            	int rs = ps.executeUpdate();
-		            	if (rs>0){
-		            		registrado=true;
-		            	}else{
-		            		throw new BeanError(1,"error al introducir al grabar archivo en base de datos");
-		            	}
-		        	    	
-
+		        	// select * from archivos where login=? and nombre=?
+		        	ps = conBD.prepareStatement(this.sql.getProperty("selectarchivo"));
 		        	
+		        		ps.setString(1, login);
+		        		ps.setString(2, archivo.getNombre_fichero());
+		            	ResultSet rs = ps.executeQuery();
+		            	if (rs.next()){
+		            		msgerror="archivo ya esta grabado en base de datos";
+		            	}else{
+		            		//resgistrarusuario = insert into usuario(login,clave,email) values(?,?,?)
+			        		ps = conBD.prepareStatement(this.sql.getProperty("grabararchivo"));
+			        		ps.setString(1, login);
+			            	ps.setBlob(2, archivo.getFichero());
+			            	ps.setString(3, archivo.getNombre_fichero());
+			            	int rs1 = ps.executeUpdate();
+			            	if (rs1<1){
+			            		msgerror="error en base de datos no se ha podido grabar el fichero";
+			            		throw new BeanError(1,"error al introducir al grabar archivo en base de datos");
+			            	}
+		            	}
+	
 		        }
 		        catch(SQLException sqle) {
 		    
@@ -211,7 +218,7 @@ public class ProcesaDAOUsuario {
 							System.out.println(sqle);
 						}
 				}	
-				return registrado;
+				return msgerror;
 			}
 			
 			

@@ -37,8 +37,11 @@ public class AccionAjaxInterpretar implements Accion {
 		StringBuilder objJSON = new StringBuilder("[");
 		
 		for (int i = 0; i<lista.size(); i++) {
+			
 			objJSON.append("{nombre:'");
 			objJSON.append(lista.get(i).getNombre_fichero());
+			objJSON.append("',tipo:'");
+			objJSON.append(lista.get(i).getTipo());
 			objJSON.append("',datosInterpretados:'");
 			objJSON.append(lista.get(i).getInterpreta());
 			objJSON.append("'},");
@@ -48,8 +51,7 @@ public class AccionAjaxInterpretar implements Accion {
 		this.Modelo.setRespuesta(objJSON.toString());
 		this.Modelo.setContentType("text/html; charset=UTF-8");	
 		
-		this.Modelo.setRespuesta("respuesta procesada");
-		//crear lista json
+		
 			   
 	} catch (BeanError e) {
 		this.error= e;

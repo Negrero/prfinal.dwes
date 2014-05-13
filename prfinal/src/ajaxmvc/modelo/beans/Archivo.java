@@ -4,14 +4,18 @@
 package ajaxmvc.modelo.beans;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.sql.Time;
 import java.util.Date;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.regex.MatchResult;
+
+import org.apache.log4j.Logger;
 
 import sun.security.krb5.internal.crypto.crc32;
 
@@ -26,19 +30,19 @@ public class Archivo implements InterpretaArchivo{
 	/** 
 	 * @author negrero
 	 */
-	private InputStream fichero;
+	private InputStream fichero=null;
 	
-	private String nombre_fichero;
+	private String nombre_fichero=null;
 	
-	private String identificacion;
+	private String identificacion=null;
 	
-	private String pais;
+	private String pais=null;
 	
-	private String tipo;
+	private String tipo=null;
 	
-	private String fecha;
+	private String fecha=null;
 	
-	private String hora;
+	private String hora=null;
 	
 	private final static String extension="TGD";
 	
@@ -49,11 +53,16 @@ public class Archivo implements InterpretaArchivo{
 		this.nombre_fichero=nombre;
 		this.fichero=is;
 		StringTokenizer st=new StringTokenizer(nombre,"_.");
-		this.tipo=st.nextToken().trim();
-		this.identificacion=st.nextToken().trim();
-		this.pais=st.nextToken().trim();
-		this.fecha=st.nextToken().trim();
-		this.hora=st.nextToken().trim();
+		try{
+			this.tipo=st.nextToken().trim();
+			this.identificacion=st.nextToken().trim();
+			this.pais=st.nextToken().trim();
+			this.fecha=st.nextToken().trim();
+			this.hora=st.nextToken().trim();
+		}catch(NoSuchElementException nsee){
+			nsee.printStackTrace();
+			
+		}
 		
 	}
 	
@@ -79,22 +88,32 @@ public class Archivo implements InterpretaArchivo{
 
 	@Override
 	public Object getInterpreta() {
-		byte[] bytes = null;
+		
 		/** Convierte un array de bytes [] en una cadena de caracteres hexadecimal
 		* @param bytes Array de bytes para ser convertidos a hexa
 		* @return Cadena en hexadecimal
 		*/
-		try {
-			this.fichero.read(bytes);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		StringBuffer retString=null;
+		
+		
+		if (this.fichero!=null){
+			try {
+				byte[] bytes = new byte[this.fichero.available()];
+				System.out.println("bytes aviles:"+this.fichero.available());
+				this.fichero.read(bytes);
+				retString = new StringBuffer();
+			
+				for (int i = 0; i < bytes.length; ++i) {
+					retString.append(Integer.toHexString(0x0100 + (bytes[i] & 0x00FF)).substring(1));
+					if((i%2)==0)
+						retString.append(" ");
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		StringBuffer retString = new StringBuffer();
-		for (int i = 0; i < bytes.length; ++i) {
-		retString.append(
-		Integer.toHexString(0x0100 + (bytes[i] & 0x00FF)).substring(1));
-		}
+		
 		return retString.toString();
 		
 	}
@@ -211,6 +230,16 @@ public class Archivo implements InterpretaArchivo{
 			return new FileConductor();
 		}
 		
+	}
+
+	public boolean isArchivo() {
+		// TODO Auto-generated method stub
+		boolean ok=false;
+		if (this.fichero!=null && this.tipo!=null && this.identificacion!=null && this.pais!=null && this.fecha!=null & this.hora!=null){
+			ok=true;
+		}
+		
+		return ok;
 	}
 	
 	

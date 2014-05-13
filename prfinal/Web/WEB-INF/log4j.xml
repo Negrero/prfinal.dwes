@@ -10,8 +10,7 @@
         </layout>  
     </appender>  
   
-    <appender name="error_file"  
-        class="org.apache.log4j.RollingFileAppender">  
+    <appender name="error_file" class="org.apache.log4j.RollingFileAppender">  
         <param name="File" value="${jboss.server.log.dir}/tuApplicationNameErrorFile.log" /> 
         <layout class="org.apache.log4j.PatternLayout">  
             <param name="ConversionPattern"  
@@ -30,8 +29,7 @@
         </layout>  
     </appender>  
   
-    <appender name="error_file1"  
-        class="org.apache.log4j.RollingFileAppender">  
+    <appender name="error_file1" class="org.apache.log4j.RollingFileAppender">  
         <param name="File" value="../../tuApplicationNameErrorFile1.log" />  
         <param name="MaxFileSize" value="2000000" />  
         <param name="MaxBackupIndex" value="5" />  
@@ -43,8 +41,7 @@
         </layout>  
     </appender>  
       
-    <appender name="error_file2"  
-        class="org.apache.log4j.RollingFileAppender">  
+    <appender name="error_file2"  class="org.apache.log4j.RollingFileAppender">  
         <param name="File" value="/tuApplicationNameErrorFile2.log" />  
         <param name="MaxFileSize" value="2000000" />  
         <param name="MaxBackupIndex" value="5" />  
@@ -83,7 +80,7 @@
 # -------------------apender HTML
 
 	<appender name="archivo1" class="org.apache.log4j.FileAppender">
-        <param name="file" value="${jboss.server.log.dir}/archivohtml.log" />
+        <param name="file" value="${jboss.server.deploy.dir}/prfinal.war/WEB-INF/LOG/archivohtml.log" />
         <layout class="org.apache.log4j.HTMLLayout">
             <param name="title" value="html" />
             <param name="locationInfo" value="true" />
