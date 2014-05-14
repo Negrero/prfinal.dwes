@@ -199,12 +199,12 @@ public class Controlador extends HttpServlet {
 				if (accion.ejecutar(request, response)) {
 					// Si es correcto, obtener el componente relativo a la vista
 					String vista = accion.getVista();
-					System.out.println("la vista de la accion en el controlador es:"+accion.getVista());
+					log.info("la vista de la accion en el controlador es:"+accion.getVista());
 					Object modelo = accion.getModelo();
 					log.info("2-vista (si es null es una peticion ajax):" + vista);
 					if (vista != null) {
 						// Aï¿½adir en la peticiï¿½n el modelo a visualizar
-						log.info("3-modelo de la accion("+accion.getClass().getSimpleName()+"):");
+						log.info("3-modelo de la accion("+accion.getClass().getSimpleName()+"):"+accion.getModelo().toString());
 						request.setAttribute("modelo", accion.getModelo());
 						// Enviar la respuesta a la solicitud
 						RequestDispatcher rd = request.getRequestDispatcher(vista);
@@ -212,7 +212,7 @@ public class Controlador extends HttpServlet {
 					} else {
 						// modelo especifico para los beans de modelo tipo ajax
 						// ver ModeloAjax.java
-						ejecutarAjax(request, response, (ModeloAjax) modelo);
+						ejecutarAjax(request, response, (ModeloAjax) modelo,accion);
 					}
 				} else {
 					// Si la ejecuciï¿½n ha generado un error, procesarlo mediante
@@ -260,14 +260,15 @@ public class Controlador extends HttpServlet {
     
   }
   
-  private void ejecutarAjax (HttpServletRequest request, HttpServletResponse response, ModeloAjax modelo) {
+  private void ejecutarAjax (HttpServletRequest request, HttpServletResponse response, ModeloAjax modelo,Accion accion) {
 	  PrintWriter out = null ;
 
 	  try {
 		  out = response.getWriter();
 		  response.setContentType(modelo.getContentType());
 		  out.println(modelo.getRespuesta());
-		 log.info("3-modelo ajax: "+modelo.getRespuesta());
+		 log.debug("3-modelo ajax ("+accion.getClass().getSimpleName()+"): "+modelo.getRespuesta());
+		
 	  }
 	  catch(IOException ioe) {
 		  //Este error hay que canalizarlo hacia gesError()

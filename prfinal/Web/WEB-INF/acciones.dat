@@ -11,3 +11,4 @@ login=ajaxmvc.modelo.acciones.AccionAjaxLogin
 grabararchivosusuario=ajaxmvc.modelo.acciones.AccionAjaxGrabarArchivo
 listaarchivo=ajaxmvc.modelo.acciones.AccionAjaxListaArchivos
 interpretar=ajaxmvc.modelo.acciones.AccionAjaxInterpretar
+anonimo=ajaxmvc.modelo.acciones.AccionAjaxAnonimo

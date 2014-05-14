@@ -51,7 +51,6 @@ public class Archivo implements InterpretaArchivo{
 	
 	public Archivo(String nombre,InputStream is) {
 		this.nombre_fichero=nombre;
-		this.fichero=is;
 		StringTokenizer st=new StringTokenizer(nombre,"_.");
 		try{
 			this.tipo=st.nextToken().trim();
@@ -62,6 +61,9 @@ public class Archivo implements InterpretaArchivo{
 		}catch(NoSuchElementException nsee){
 			nsee.printStackTrace();
 			
+		}
+		if(this.isArchivo()){
+			this.fichero=is;
 		}
 		
 	}
@@ -99,7 +101,7 @@ public class Archivo implements InterpretaArchivo{
 		if (this.fichero!=null){
 			try {
 				byte[] bytes = new byte[this.fichero.available()];
-				System.out.println("bytes aviles:"+this.fichero.available());
+				
 				this.fichero.read(bytes);
 				retString = new StringBuffer();
 			
@@ -235,7 +237,7 @@ public class Archivo implements InterpretaArchivo{
 	public boolean isArchivo() {
 		// TODO Auto-generated method stub
 		boolean ok=false;
-		if (this.fichero!=null && this.tipo!=null && this.identificacion!=null && this.pais!=null && this.fecha!=null & this.hora!=null){
+		if (this.tipo!=null && this.identificacion!=null && this.pais!=null && this.fecha!=null & this.hora!=null){
 			ok=true;
 		}
 		
