@@ -84,7 +84,8 @@ public class AccionArchivo implements Accion {
 			System.out.println(getFileName(trozo));
 			
 		}
-		 String resp = "";
+		 @SuppressWarnings("unused")
+		String resp = "";
 		
 	        
 		
@@ -106,7 +107,8 @@ public class AccionArchivo implements Accion {
      * This will parse following string and get filename
      * Content-Disposition: form-data; name="content"; filename="a.txt"
      **/
-    private String getUploadedFileName(Part p) {
+    @SuppressWarnings("unused")
+	private String getUploadedFileName(Part p) {
         String file = "", header = "Content-Disposition";
         String[] strArray = p.getHeader(header).split(";");
         for(String split : strArray) {
@@ -155,7 +157,7 @@ public class AccionArchivo implements Accion {
 	 */
 	@Override
 	public Exception getError() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
