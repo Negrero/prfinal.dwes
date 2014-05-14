@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="beans" size="991,356" id="ajaxmvc.modelo.beans" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D3130303020707266696E616C2F6E65677265726F">
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.5/@sourceConnections.0 //@children.4/@sourceConnections.1 //@children.5/@sourceConnections.1" name="Archivo" location="640,50" size="172,572" id="ajaxmvc.modelo.beans/Archivo" runTimeClassModel="getFactoriaFichero(),setTipo(Ljava.lang.String;),getChecksum(),getInterpreta(),pais,getIdentificacion(),getPais(),checksum,setNombre_fichero(Ljava.lang.String;),getFecha(),setHora(Ljava.lang.String;),setChecksum(Lsun.security.krb5.internal.crypto.crc32;),Archivo(),setPais(Ljava.lang.String;),setFecha(Ljava.lang.String;),setFichero(Ljava.io.InputStream;),Archivo(Ljava.lang.String;Ljava.io.InputStream;),getHora(),getFichero(),setIdentificacion(Ljava.lang.String;),getTipo(),getNombre_fichero(),fecha,isArchivo(),identificacion,hora,nombre_fichero,getExtension(),fichero,tipo">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.5/@sourceConnections.0 //@children.4/@sourceConnections.1 //@children.5/@sourceConnections.1" name="Archivo" location="640,50" size="172,572" id="ajaxmvc.modelo.beans/Archivo" runTimeClassModel="getFactoriaFichero(),getChecksum(),setTipo(Ljava.lang.String;),getInterpreta(),pais,getIdentificacion(),getPais(),checksum,setNombre_fichero(Ljava.lang.String;),getFecha(),setHora(Ljava.lang.String;),setChecksum(Lsun.security.krb5.internal.crypto.crc32;),Archivo(),setPais(Ljava.lang.String;),setFecha(Ljava.lang.String;),setFichero(Ljava.io.InputStream;),Archivo(Ljava.lang.String;Ljava.io.InputStream;),getHora(),getFichero(),setIdentificacion(Ljava.lang.String;),getTipo(),getNombre_fichero(),fecha,isArchivo(),hora,identificacion,nombre_fichero,getExtension(),tipo,fichero">
     <children xsi:type="editmodel:CompartmentEditModel" size="149,144">
       <children xsi:type="editmodel:AttributeEditModel" name="checksum" id="ajaxmvc.modelo.beans/Archivo#checksum"/>
       <children xsi:type="editmodel:AttributeEditModel" name="hora" id="ajaxmvc.modelo.beans/Archivo#hora"/>
@@ -24,7 +24,7 @@
       <children xsi:type="editmodel:MethodEditModel" name="setPais" id="ajaxmvc.modelo.beans/Archivo#setPais(Ljava.lang.String;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="getIdentificacion" id="ajaxmvc.modelo.beans/Archivo#getIdentificacion()"/>
       <children xsi:type="editmodel:MethodEditModel" name="setFichero" id="ajaxmvc.modelo.beans/Archivo#setFichero(Ljava.io.InputStream;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="Archivo" id="ajaxmvc.modelo.beans/Archivo#Archivo(Ljava.lang.String;Ljava.io.InputStream;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Archivo" id="ajaxmvc.modelo.beans/Archivo#Archivo()"/>
       <children xsi:type="editmodel:MethodEditModel" name="setNombre_fichero" id="ajaxmvc.modelo.beans/Archivo#setNombre_fichero(Ljava.lang.String;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="getPais" id="ajaxmvc.modelo.beans/Archivo#getPais()"/>
       <children xsi:type="editmodel:MethodEditModel" name="getFichero" id="ajaxmvc.modelo.beans/Archivo#getFichero()"/>
@@ -56,7 +56,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="BeanError" location="227,50" size="162,140" id="ajaxmvc.modelo.beans/BeanError" runTimeClassModel="mensError,BeanError(ILjava.lang.String;),excepcion,BeanError(ILjava.lang.String;Ljava.lang.Exception;),codError">
+  <children xsi:type="editmodel:ClassEditModel" name="BeanError" location="227,50" size="162,140" id="ajaxmvc.modelo.beans/BeanError" runTimeClassModel="mensError,BeanError(ILjava.lang.String;),excepcion,codError,BeanError(ILjava.lang.String;Ljava.lang.Exception;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="139,54">
       <children xsi:type="editmodel:AttributeEditModel" name="codError" id="ajaxmvc.modelo.beans/BeanError#codError"/>
       <children xsi:type="editmodel:AttributeEditModel" name="excepcion" id="ajaxmvc.modelo.beans/BeanError#excepcion"/>

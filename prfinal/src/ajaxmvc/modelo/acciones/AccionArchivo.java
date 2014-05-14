@@ -3,51 +3,31 @@
  */
 package ajaxmvc.modelo.acciones;
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.LineNumberReader;
 import java.util.Collection;
-import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import javax.sql.DataSource;
-import javax.swing.text.html.HTMLDocument.Iterator;
 
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.jboss.resteasy.annotations.providers.multipart.MultipartForm;
-
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.FilePart;
-import com.oreilly.servlet.multipart.MultipartParser;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Parser;
 
 import ajaxmvc.controlador.Accion;
 import ajaxmvc.modelo.beans.BeanError;
 
-/**
+/** 
  * @author negrero
- * @param <MultipartParse>
- *
+ * @param <MultipartParse >
+ *  Clase accion para las pruebas de la subida de ficheros
  */
 public class AccionArchivo implements Accion {
 
-	
-	
-	private static final String UPLOAD_DIRECTORY = "/tmp";
 	/**
 	 * Datasource que se empleará para acceder a la base de datos.
 	 * @uml.property  name="dS"
@@ -59,10 +39,11 @@ public class AccionArchivo implements Accion {
      * @uml.associationEnd
      * @aggregation composite
      */
+	@SuppressWarnings("unused")
 	private BeanError error = null;
-	/**
-	 * Objeto que encapsula el modelo que procesará la vista.
-	 * @uml.property  name="modelo"
+	/** 
+	 * Objeto que encapsula el modelo que procesará para la respuesta de ajax.
+	 * @uml.property name="modelo"
 	 */
 	private Object modelo = null;
 	/**
@@ -71,8 +52,9 @@ public class AccionArchivo implements Accion {
 	 */
 	private String vista = null;
 	
-	/**
-	 * Si no hay errores en el procesamiento de la acción
+	/** 
+	 * Si no hay errores en el procesamiento de la acción y no es una peticion ajax
+	 * @uml.property name="vistaOk"
 	 */
 	private String vistaOk = "principalUsuario.jsp";
 	
@@ -91,10 +73,10 @@ public class AccionArchivo implements Accion {
 	@Override
 	public boolean ejecutar(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		this.vista=this.vistaOk;
 		
-		//this.uploadFile(request, response);
+		
 
 		Collection<Part> partes = request.getParts();
 		System.out.println(partes.size());
@@ -117,31 +99,7 @@ public class AccionArchivo implements Accion {
 		   throw new IllegalStateException("Cannot fin filename in web request header.");
 		  }
 		 }
-	 /**
-     * uploadFile method used to upload file to server.
-     *
-     ***/
-    private void uploadFile(HttpServletRequest request,
-      HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        for(Part part : request.getParts()) {
-        	System.out.println("nombre de la parte:"+part.getName());
-        	System.out.println("tamaoño de la parte:"+part.getSize());
-            String name = part.getName();
-            InputStream is = request.getPart(name).getInputStream();
-            String fileName = getUploadedFileName(part);
-            FileOutputStream fos = new FileOutputStream(this.Sc.getRealPath("/")+"/WEB-INF/tmp/"+fileName);
-            int data = 0;
-            while((data = is.read()) != -1) {
-                fos.write(data);
-            }
-            fos.close();
-            is.close();
-            
-        }
-    
-    }
+	 
     
     /**
      * Method used to get uploaded file name.
@@ -167,17 +125,19 @@ public class AccionArchivo implements Accion {
 	 */
 	@Override
 	public String getVista() {
-		// TODO Auto-generated method stub
+
 		return this.vista;
 	}
 
 	/* (non-Javadoc)
 	 * @see ajaxmvc.controlador.Accion#getModelo()
 	 */
+	/** 
+	 * @uml.property  name="modelo"
+	 */
 	@Override
 	public Object getModelo() {
-		// TODO Auto-generated method stub
-		return null;
+		return modelo;
 	}
 
 	/* (non-Javadoc)
@@ -185,7 +145,7 @@ public class AccionArchivo implements Accion {
 	 */
 	@Override
 	public void setSc(ServletContext sc) {
-		// TODO Auto-generated method stub
+
 		this.Sc=sc;
 
 	}
@@ -204,7 +164,6 @@ public class AccionArchivo implements Accion {
 	 */
 	@Override
 	public void setDS(DataSource ds) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -213,19 +172,20 @@ public class AccionArchivo implements Accion {
 	 */
 	@Override
 	public void setSQL(String archivoSql) {
-		// TODO Auto-generated method stub
 
 	}
 
-	/**
+	/** 
 	 * @return the vistaOk
+	 * @uml.property  name="vistaOk"
 	 */
 	public String getVistaOk() {
 		return vistaOk;
 	}
 
-	/**
+	/** 
 	 * @param vistaOk the vistaOk to set
+	 * @uml.property  name="vistaOk"
 	 */
 	public void setVistaOk(String vistaOk) {
 		this.vistaOk = vistaOk;
@@ -280,8 +240,9 @@ public class AccionArchivo implements Accion {
 		this.error = error;
 	}
 
-	/**
+	/** 
 	 * @param modelo the modelo to set
+	 * @uml.property  name="modelo"
 	 */
 	public void setModelo(Object modelo) {
 		this.modelo = modelo;

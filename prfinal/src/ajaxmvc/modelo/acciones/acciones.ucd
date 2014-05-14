@@ -30,7 +30,7 @@
       <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="getArchivoSql" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#getArchivoSql()"/>
       <children xsi:type="editmodel:MethodEditModel" name="setArchivoSql" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#setArchivoSql(Ljava.lang.String;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="setSQL" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#setSQL(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSQL" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#setS(Ljava.lang.String;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
@@ -107,7 +107,7 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="AccionArchivo" location="50,50" size="147,500" id="ajaxmvc.modelo.acciones/AccionArchivo" runTimeClassModel="getVistaNoOk(),getVista(),setDS(Ljavax.sql.DataSource;),getArchivoSql(),setVista(Ljava.lang.String;),vistaOk,sc,setModelo(Ljava.lang.Object;),setSQL(Ljava.lang.String;),getModelo(),setSc(Ljavax.servlet.ServletContext;),archivoSql,vistaNoOk,getSc(),setVistaNoOk(Ljava.lang.String;),dS,setVistaOk(Ljava.lang.String;),getDS(),setError(Lajaxmvc.modelo.beans.BeanError;),getError(),vista,getVistaOk(),modelo,setArchivoSql(Ljava.lang.String;),ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+  <children xsi:type="editmodel:ClassEditModel" name="AccionArchivo" location="50,50" size="147,500" id="ajaxmvc.modelo.acciones/AccionArchivo" runTimeClassModel="getVistaNoOk(),setDS(Ljavax.sql.DataSource;),getVista(),getArchivoSql(),vistaOk,setVista(Ljava.lang.String;),sc,setSQL(Ljava.lang.String;),setModelo(Ljava.lang.Object;),getModelo(),setSc(Ljavax.servlet.ServletContext;),archivoSql,vistaNoOk,getSc(),setVistaNoOk(Ljava.lang.String;),dS,setVistaOk(Ljava.lang.String;),getDS(),setError(Lajaxmvc.modelo.beans.BeanError;),getError(),vista,getVistaOk(),modelo,setArchivoSql(Ljava.lang.String;),ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="124,126">
       <children xsi:type="editmodel:AttributeEditModel" name="archivoSql" id="ajaxmvc.modelo.acciones/AccionArchivo#archivoSql"/>
       <children xsi:type="editmodel:AttributeEditModel" name="dS" id="ajaxmvc.modelo.acciones/AccionArchivo#dS"/>
@@ -149,7 +149,7 @@
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="77,36">
       <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ajaxmvc.modelo.acciones/AccionRegistrar#ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="setSQL" id="ajaxmvc.modelo.acciones/AccionRegistrar#setSQL(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSQL" id="ajaxmvc.modelo.acciones/AccionRegistrar#setS(Ljava.lang.String;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>

@@ -4,6 +4,7 @@ package ajaxmvc.modelo.beans;
  * Modelo para peticiones AJAX
  * @author Andres Carmona Gil
  * @version  1
+ *  Para procesar peticiones AJAX que seran casi siempre con formato json
  */
 public class ModeloAjax {
 	/**

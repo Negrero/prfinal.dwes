@@ -1,5 +1,10 @@
 
-
+/**
+ * funcion que recibe un formulario y recorre todos sus input
+ * para validarlo
+ * @param formulario
+ * @returns {Boolean}
+ */
 function ValidaCampos(formulario){	
 	var lista=formulario.getElementsByTagName("input");
 
@@ -18,6 +23,11 @@ function ValidaCampos(formulario){
 	return ok;	
 }
 
+/**
+ * Valida un input y establece la etiqueta con el id ="nombreinput.error" a visible
+ * @param elemento
+ * @returns {Boolean}
+ */
 function validar(elemento){	
 	 //id de la etiqueta de error ejemplo id="login.error" donde login es <input name="login" ...
 	iderror=elemento.name+".error";

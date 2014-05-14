@@ -14,17 +14,33 @@ import ajaxmvc.modelo.beans.ModeloAjax;
 import ajaxmvc.modelo.procesos.ProcesaDAOUsuario;
 
 public class AccionAjaxLogin implements Accion {
+	/** 
+	 * Si no hay errores en el procesamiento de la acción y no es una peticion ajax
+	 * @uml.property name="vistaOk"
+	 */
 	private String vistaOk="principalUsuario.jsp";
+	/** 
+	 * Página JSP que se devuelve como "vista" del procesamiento de la acción.
+	 * @uml.property name="vista"
+	 */
 	private String vista=null;
+	/** 
+	 * Objeto que encapsula el modelo que procesará para la respuesta de ajax.
+	 * @uml.property name="modelo"
+	 */
 	private Object Modelo=null;
 	private String sql;
 	private BeanError error;
+	/** 
+	 * datasource de la base de datos
+	 * @uml.property name="ds"
+	 */
 	private DataSource ds;
 	
 	@Override
 	public boolean ejecutar(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		ProcesaDAOUsuario procesaBD = new ProcesaDAOUsuario(this.ds,this.sql);
 		ModeloAjax modelo = new ModeloAjax();
 		
@@ -44,7 +60,7 @@ public class AccionAjaxLogin implements Accion {
 				request.getSession().invalidate();
 			}
 		} catch (BeanError e) {
-			// TODO Auto-generated catch block
+			
 			this.error=e;
 			return false;
 		}
@@ -54,45 +70,57 @@ public class AccionAjaxLogin implements Accion {
 		
 	}
 
-	private void setModelo(ModeloAjax modelo) {
-		// TODO Auto-generated method stub
-		this.Modelo=modelo;
-	}
-
+	/** 
+	 * @uml.property  name="vista"
+	 */
 	@Override
 	public String getVista() {
-		// TODO Auto-generated method stub
-		return this.vista;
+		return vista;
 	}
 
+	/** 
+	 * @uml.property  name="modelo"
+	 */
 	@Override
 	public Object getModelo() {
-		// TODO Auto-generated method stub
-		return this.Modelo;
+		return Modelo;
 	}
 
 	@Override
 	public void setSc(ServletContext sc) {
-		// TODO Auto-generated method stub
+	
 
 	}
 
 	@Override
 	public Exception getError() {
-		// TODO Auto-generated method stub
 		return (Exception) this.error;
 	}
 
 	@Override
 	public void setDS(DataSource ds) {
-		// TODO Auto-generated method stub
 		this.ds=ds;
 	}
 
 	@Override
 	public void setSQL(String archivoSql) {
-		// TODO Auto-generated method stub
 			this.sql=archivoSql;
+	}
+
+	/** 
+	 * @uml.property  name="modelo"
+	 */
+	public void setModelo(Object modelo) {
+		Modelo = modelo;
+	}
+
+	/**
+	 * Setter of the property <tt>vista</tt>
+	 * @param vista  The vista to set.
+	 * @uml.property  name="vista"
+	 */
+	public void setVista(String vista) {
+		this.vista = vista;
 	}
 
 }

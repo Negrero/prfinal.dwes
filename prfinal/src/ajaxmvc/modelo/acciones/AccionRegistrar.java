@@ -17,6 +17,7 @@ import ajaxmvc.modelo.procesos.*;
  * Acción registrar. Registra un usuario
  * @author Andres Carmona Gil
  * @version  1
+ *  Accion que lleva a cabo el grabado de datos de un usuario
  */
 public class AccionRegistrar implements Accion {
 
@@ -43,8 +44,9 @@ public class AccionRegistrar implements Accion {
 	 */
 	private String vista = null;
 	
-	/**
-	 * Si no hay errores en el procesamiento de la acción
+	/** 
+	 * Si no hay errores en el procesamiento de la acción y no es una peticion ajax
+	 * @uml.property name="vistaOk"
 	 */
 	private String vistaOk = "principalUsuario.jsp";
 	
@@ -55,59 +57,66 @@ public class AccionRegistrar implements Accion {
 	/**
 	 * Contexto de aplicación.
 	 */
+	@SuppressWarnings("unused")
 	private ServletContext Sc;
-	private String archivoSql;
+	/** 
+	 * Nombre del archivo de las sentencias sql
+	 * @uml.property name="archivoSql"
+	 */
+	private String sql;
 	
 		
 			
-			/** 
-			 * Este ejecutar comprueba de que el usuario no esta registrado ya
-			 * y ponemos atributo login en session
-			 */
-			public boolean ejecutar(HttpServletRequest request, HttpServletResponse response)	throws ServletException, IOException {
-			
-					
-							ProcesaDAOUsuario procesaBD;
-							Usuario user;
-							String login, clave,email;
-							boolean estado = true;
-							HttpSession sesion = request.getSession();
-									
-							login = request.getParameter("login");
-							clave = request.getParameter("clave");
-							email = request.getParameter("email");
+				
+				/** 
+				 * Este ejecutar comprueba de que el usuario no esta registrado ya
+				 * y ponemos atributo login en session
+				 */
+				public boolean ejecutar(HttpServletRequest request, HttpServletResponse response)	throws ServletException, IOException {
+				
 							
-							if ((login!=null) && (login!="") && (clave!=null) && (clave!=""))
-							{
-								user = new Usuario(login,clave,email);
-								user.setNombre(request.getParameter("nombre"));
-								try {
-									procesaBD = new ProcesaDAOUsuario(this.getDS(),this.archivoSql);
-								
-									if (procesaBD.registrarUsuario(user))
-									{
-										this.setVista(vistaOk);
-										// para que nadie pueda entrar en otras paginas reservadas a los usuario registrados
-										// ya que luego preguntaremos por el login si existe en sesion
 									
-										request.getSession().setAttribute("login", login);
-									}
-									else 
-									{
-										
-										sesion.invalidate();
-										this.setVista(vistaNoOk);
-									}
-								} catch (BeanError e) {
-									// TODO Auto-generated catch block
-									this.error=e;
-									return false;
-								}	
-							}
-							else
-								this.setVista(vistaNoOk);
-							return estado;
-						  }
+											ProcesaDAOUsuario procesaBD;
+											Usuario user;
+											String login, clave,email;
+											boolean estado = true;
+											HttpSession sesion = request.getSession();
+													
+											login = request.getParameter("login");
+											clave = request.getParameter("clave");
+											email = request.getParameter("email");
+											
+											if ((login!=null) && (login!="") && (clave!=null) && (clave!=""))
+											{
+												user = new Usuario(login,clave,email);
+												user.setNombre(request.getParameter("nombre"));
+												try {
+													procesaBD = new ProcesaDAOUsuario(this.getDS(),this.sql);
+												
+													if (procesaBD.registrarUsuario(user))
+													{
+														this.setVista(vistaOk);
+														// para que nadie pueda entrar en otras paginas reservadas a los usuario registrados
+														// ya que luego preguntaremos por el login si existe en sesion
+													
+														request.getSession().setAttribute("login", login);
+													}
+													else 
+													{
+														
+														sesion.invalidate();
+														this.setVista(vistaNoOk);
+													}
+												} catch (BeanError e) {
+											
+													this.error=e;
+													return false;
+												}	
+											}
+											else
+												this.setVista(vistaNoOk);
+											return estado;
+										   }
 
 	/**
 	 * @return
@@ -137,6 +146,7 @@ public class AccionRegistrar implements Accion {
 	 * @param modelo  El modelo a establecer.
 	 * @uml.property  name="modelo"
 	 */
+	@SuppressWarnings("unused")
 	private void setModelo(Object modelo) {
 		this.modelo = modelo;
 	}	
@@ -196,8 +206,7 @@ public class AccionRegistrar implements Accion {
 
 	@Override
 	public void setSQL(String archivoSql) {
-		// TODO Auto-generated method stub
-		this.archivoSql=archivoSql;
+		this.sql=archivoSql;
 	}
 
 }
