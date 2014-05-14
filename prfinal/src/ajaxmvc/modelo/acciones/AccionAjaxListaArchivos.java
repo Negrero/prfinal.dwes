@@ -23,12 +23,12 @@ import ajaxmvc.modelo.procesos.ProcesaDAOUsuario;
  * @param <GesError>
  *
  */
-public class AccionAjaxListaArchivos<GesError> implements Accion {
+public class AccionAjaxListaArchivos implements Accion {
 	private String vistaOk="principalUsuario.jsp";
 	private String vista=null;
 	private ModeloAjax Modelo=null;
 	private String sql;
-	private GesError error;
+	private BeanError error;
 	private DataSource ds;
 
 	/* (non-Javadoc)

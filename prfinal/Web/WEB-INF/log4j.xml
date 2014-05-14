@@ -51,8 +51,10 @@
         </filter>        
     </appender>  
 <!-- un mejor visualizado de los debug en formato html -->
-    <appender name="debug_html" class="org.apache.log4j.FileAppender">
+    <appender name="debug_html" class="org.apache.log4j.RollingFileAppender">
         <param name="file" value="${jboss.server.deploy.dir}/prfinal.war/WEB-INF/LOG/debug.html" />
+        <param name="MaxFileSize" value="2000000" />   <!-- maximo 2mb -->  
+        <param name="MaxBackupIndex" value="5" />  <!-- cinco archivos como maximo -->
         <param name="Threshold" value="debug" /> 
         <layout class="org.apache.log4j.HTMLLayout">
             <param name="title" value="html" />
@@ -87,7 +89,7 @@
 
     <logger name="log4j.xml">
         <level value="trace" />
-        <appender-ref ref="consola1" />
+        
     </logger>
     
     <root>

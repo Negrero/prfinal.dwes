@@ -13,12 +13,12 @@ import ajaxmvc.modelo.beans.BeanError;
 import ajaxmvc.modelo.beans.ModeloAjax;
 import ajaxmvc.modelo.procesos.ProcesaDAOUsuario;
 
-public class AccionAjaxLogin<GesError> implements Accion {
+public class AccionAjaxLogin implements Accion {
 	private String vistaOk="principalUsuario.jsp";
 	private String vista=null;
 	private Object Modelo=null;
 	private String sql;
-	private GesError error;
+	private BeanError error;
 	private DataSource ds;
 	
 	@Override
@@ -45,7 +45,7 @@ public class AccionAjaxLogin<GesError> implements Accion {
 			}
 		} catch (BeanError e) {
 			// TODO Auto-generated catch block
-			this.error=(GesError) e;
+			this.error=e;
 			return false;
 		}
 		System.out.println(modelo.getRespuesta());

@@ -7,10 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script language="javascript" src="js/coreAJAX.js"></script>
-<script language="javascript" src="js/md5.js"></script>
-<script language="javascript" src="js/utf8_encode.js"></script>
-<script language="javascript" src="js/md5_file.js"></script>
-<script language="javascript" src="js/file_get_contents.js"></script>
 <script type="text/javascript" src="js/validar.js"></script>
 <script type="text/javascript">
 	
@@ -81,62 +77,9 @@
         }
     }
 
-    /**
-     * read text input
-     */
-    var cadena;
-	function readText(archivo) {
-		var output = ""; //placeholder for text output
-		var lista=document.getElementById("list")
-		lista.innerHTML="";
-		
-		
-		if (archivo.files && archivo.files[0]) {
-			for (i = 0; i < archivo.files.length; i++) {
-				var reader = new FileReader();
-		
-				reader.onload = function(e) {
-					output = e.target.result;
-					
-					displayContents(output);
-				};//end onload()
-				
-				reader.readAsText(archivo.files[i]);
-			}
+    
 
-		}//end if html5 filelist support
-		else if (window.ActiveXObject && filePath) { //fallback to IE 6-8 support via ActiveX
-			try {
-				reader = new ActiveXObject("Scripting.FileSystemObject");
-				var file = reader.OpenTextFile(filePath, 1); //ActiveX File Object
-				output = file.ReadAll(); //text contents of file
-				file.Close(); //close file "input stream"
-				displayContents(output);
-			} catch (e) {
-				if (e.number == -2146827859) {
-					alert('Unable to access local files due to browser security settings. '
-							+ 'To overcome this, go to Tools->Internet Options->Security->Custom Level. '
-							+ 'Find the setting for "Initialize and script ActiveX controls not marked as safe" and change it to "Enable" or "Prompt"');
-				}
-			}
-		} else { //this is where you could fallback to Java Applet, Flash or similar
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * display content using a basic HTML replacement
-	 */
-	function displayContents(txt,file) {
-		var el = document.getElementById('list');
-		
-		console.log(md5(txt));
-		
-		el.appendChild(document.createElement("br"));
-		el.appendChild(document.createTextNode(md5(txt)));
-		
-	}
+	
 	
 		function seleccionado(){ 
 

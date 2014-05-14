@@ -1,5 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" id="ajaxmvc.modelo.acciones" metadata="uml2-1.0" tag="1000" key="32303037303533312D3130303020707266696E616C2F6E65677265726F">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="acciones" size="1480,850" id="ajaxmvc.modelo.acciones" metadata="uml2-1.0" initialized="true" scrolledY="45" tag="1000" key="32303037303533312D3130303020707266696E616C2F6E65677265726F">
+  <children xsi:type="editmodel:ClassEditModel" name="AccionAjaxAnonimo" location="555,600" size="185,230" id="ajaxmvc.modelo.acciones/AccionAjaxAnonimo" runTimeClassModel="getVista(),setDS(Ljavax.sql.DataSource;),error,getError(),vista,setSQL(Ljava.lang.String;),modelo,getModelo(),ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;),setSc(Ljavax.servlet.ServletContext;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="132,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="error" id="ajaxmvc.modelo.acciones/AccionAjaxAnonimo#error"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="modelo" id="ajaxmvc.modelo.acciones/AccionAjaxAnonimo#modelo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="vista" id="ajaxmvc.modelo.acciones/AccionAjaxAnonimo#vista"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="89,126">
+      <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ajaxmvc.modelo.acciones/AccionAjaxAnonimo#ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getError" id="ajaxmvc.modelo.acciones/AccionAjaxAnonimo#getError()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelo" id="ajaxmvc.modelo.acciones/AccionAjaxAnonimo#getModelo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVista" id="ajaxmvc.modelo.acciones/AccionAjaxAnonimo#getVista()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDS" id="ajaxmvc.modelo.acciones/AccionAjaxAnonimo#setDS(Ljavax.sql.DataSource;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSQL" id="ajaxmvc.modelo.acciones/AccionAjaxAnonimo#setSQL(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSc" id="ajaxmvc.modelo.acciones/AccionAjaxAnonimo#setSc(Ljavax.servlet.ServletContext;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="AccionAjaxExisteLogin" location="301,600" size="204,212" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin" runTimeClassModel="dS,getArchivoSql(),vista,setSQL(Ljava.lang.String;),sc,modelo,ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;),setArchivoSql(Ljava.lang.String;),archivoSql">
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="archivoSql" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#archivoSql"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dS" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#dS"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="modelo" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#modelo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="sc" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#sc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="vista" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#vista"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="109,72">
+      <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getArchivoSql" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#getArchivoSql()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setArchivoSql" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#setArchivoSql(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSQL" id="ajaxmvc.modelo.acciones/AccionAjaxExisteLogin#setSQL(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="AccionAjaxGrabarArchivo" location="907,50" size="225,230" id="ajaxmvc.modelo.acciones/AccionAjaxGrabarArchivo" runTimeClassModel="getVista(),setDS(Ljavax.sql.DataSource;),error,getError(),vista,setSQL(Ljava.lang.String;),modelo,ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;),getModelo(),setSc(Ljavax.servlet.ServletContext;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="132,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="error" id="ajaxmvc.modelo.acciones/AccionAjaxGrabarArchivo#error"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="modelo" id="ajaxmvc.modelo.acciones/AccionAjaxGrabarArchivo#modelo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="vista" id="ajaxmvc.modelo.acciones/AccionAjaxGrabarArchivo#vista"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="89,126">
+      <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ajaxmvc.modelo.acciones/AccionAjaxGrabarArchivo#ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getError" id="ajaxmvc.modelo.acciones/AccionAjaxGrabarArchivo#getError()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelo" id="ajaxmvc.modelo.acciones/AccionAjaxGrabarArchivo#getModelo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVista" id="ajaxmvc.modelo.acciones/AccionAjaxGrabarArchivo#getVista()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDS" id="ajaxmvc.modelo.acciones/AccionAjaxGrabarArchivo#setDS(Ljavax.sql.DataSource;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSQL" id="ajaxmvc.modelo.acciones/AccionAjaxGrabarArchivo#setSQL(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSc" id="ajaxmvc.modelo.acciones/AccionAjaxGrabarArchivo#setSc(Ljavax.servlet.ServletContext;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="AccionAjaxInterpretar" location="50,600" size="201,230" id="ajaxmvc.modelo.acciones/AccionAjaxInterpretar" runTimeClassModel="getVista(),setDS(Ljavax.sql.DataSource;),error,getError(),vista,setSQL(Ljava.lang.String;),modelo,getModelo(),ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;),setSc(Ljavax.servlet.ServletContext;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="132,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="error" id="ajaxmvc.modelo.acciones/AccionAjaxInterpretar#error"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="modelo" id="ajaxmvc.modelo.acciones/AccionAjaxInterpretar#modelo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="vista" id="ajaxmvc.modelo.acciones/AccionAjaxInterpretar#vista"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="89,126">
+      <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ajaxmvc.modelo.acciones/AccionAjaxInterpretar#ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getError" id="ajaxmvc.modelo.acciones/AccionAjaxInterpretar#getError()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelo" id="ajaxmvc.modelo.acciones/AccionAjaxInterpretar#getModelo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVista" id="ajaxmvc.modelo.acciones/AccionAjaxInterpretar#getVista()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDS" id="ajaxmvc.modelo.acciones/AccionAjaxInterpretar#setDS(Ljavax.sql.DataSource;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSQL" id="ajaxmvc.modelo.acciones/AccionAjaxInterpretar#setSQL(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSc" id="ajaxmvc.modelo.acciones/AccionAjaxInterpretar#setSc(Ljavax.servlet.ServletContext;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="AccionAjaxListaArchivos" location="247,50" size="218,230" id="ajaxmvc.modelo.acciones/AccionAjaxListaArchivos" runTimeClassModel="getVista(),setDS(Ljavax.sql.DataSource;),error,getError(),vista,setSQL(Ljava.lang.String;),modelo,ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;),getModelo(),setSc(Ljavax.servlet.ServletContext;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="132,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="error" id="ajaxmvc.modelo.acciones/AccionAjaxListaArchivos#error"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="modelo" id="ajaxmvc.modelo.acciones/AccionAjaxListaArchivos#modelo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="vista" id="ajaxmvc.modelo.acciones/AccionAjaxListaArchivos#vista"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="89,126">
+      <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ajaxmvc.modelo.acciones/AccionAjaxListaArchivos#ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getError" id="ajaxmvc.modelo.acciones/AccionAjaxListaArchivos#getError()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelo" id="ajaxmvc.modelo.acciones/AccionAjaxListaArchivos#getModelo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVista" id="ajaxmvc.modelo.acciones/AccionAjaxListaArchivos#getVista()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDS" id="ajaxmvc.modelo.acciones/AccionAjaxListaArchivos#setDS(Ljavax.sql.DataSource;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSQL" id="ajaxmvc.modelo.acciones/AccionAjaxListaArchivos#setSQL(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSc" id="ajaxmvc.modelo.acciones/AccionAjaxListaArchivos#setSc(Ljavax.servlet.ServletContext;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="AccionAjaxLogin" location="606,50" size="251,230" id="ajaxmvc.modelo.acciones/AccionAjaxLogin" runTimeClassModel="getVista(),setDS(Ljavax.sql.DataSource;),error,getError(),vista,setSQL(Ljava.lang.String;),modelo,getModelo(),ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;),setSc(Ljavax.servlet.ServletContext;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="107,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="error" id="ajaxmvc.modelo.acciones/AccionAjaxLogin#error"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="modelo" id="ajaxmvc.modelo.acciones/AccionAjaxLogin#modelo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="vista" id="ajaxmvc.modelo.acciones/AccionAjaxLogin#vista"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="89,126">
+      <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ajaxmvc.modelo.acciones/AccionAjaxLogin#ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getError" id="ajaxmvc.modelo.acciones/AccionAjaxLogin#getError()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelo" id="ajaxmvc.modelo.acciones/AccionAjaxLogin#getModelo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVista" id="ajaxmvc.modelo.acciones/AccionAjaxLogin#getVista()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDS" id="ajaxmvc.modelo.acciones/AccionAjaxLogin#setDS(Ljavax.sql.DataSource;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSQL" id="ajaxmvc.modelo.acciones/AccionAjaxLogin#setSQL(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSc" id="ajaxmvc.modelo.acciones/AccionAjaxLogin#setSc(Ljavax.servlet.ServletContext;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="AccionArchivo" location="50,50" size="147,500" id="ajaxmvc.modelo.acciones/AccionArchivo" runTimeClassModel="getVistaNoOk(),getVista(),setDS(Ljavax.sql.DataSource;),getArchivoSql(),setVista(Ljava.lang.String;),vistaOk,sc,setModelo(Ljava.lang.Object;),setSQL(Ljava.lang.String;),getModelo(),setSc(Ljavax.servlet.ServletContext;),archivoSql,vistaNoOk,getSc(),setVistaNoOk(Ljava.lang.String;),dS,setVistaOk(Ljava.lang.String;),getDS(),setError(Lajaxmvc.modelo.beans.BeanError;),getError(),vista,getVistaOk(),modelo,setArchivoSql(Ljava.lang.String;),ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="archivoSql" id="ajaxmvc.modelo.acciones/AccionArchivo#archivoSql"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dS" id="ajaxmvc.modelo.acciones/AccionArchivo#dS"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="modelo" id="ajaxmvc.modelo.acciones/AccionArchivo#modelo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="sc" id="ajaxmvc.modelo.acciones/AccionArchivo#sc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="vista" id="ajaxmvc.modelo.acciones/AccionArchivo#vista"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="vistaNoOk" id="ajaxmvc.modelo.acciones/AccionArchivo#vistaNoOk"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="vistaOk" id="ajaxmvc.modelo.acciones/AccionArchivo#vistaOk"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="109,324">
+      <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ajaxmvc.modelo.acciones/AccionArchivo#ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getArchivoSql" id="ajaxmvc.modelo.acciones/AccionArchivo#getArchivoSql()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDS" id="ajaxmvc.modelo.acciones/AccionArchivo#getDS()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getError" id="ajaxmvc.modelo.acciones/AccionArchivo#getError()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getModelo" id="ajaxmvc.modelo.acciones/AccionArchivo#getModelo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSc" id="ajaxmvc.modelo.acciones/AccionArchivo#getSc()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVista" id="ajaxmvc.modelo.acciones/AccionArchivo#getVista()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVistaNoOk" id="ajaxmvc.modelo.acciones/AccionArchivo#getVistaNoOk()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVistaOk" id="ajaxmvc.modelo.acciones/AccionArchivo#getVistaOk()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setArchivoSql" id="ajaxmvc.modelo.acciones/AccionArchivo#setArchivoSql(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDS" id="ajaxmvc.modelo.acciones/AccionArchivo#setDS(Ljavax.sql.DataSource;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setError" id="ajaxmvc.modelo.acciones/AccionArchivo#setError(Lajaxmvc.modelo.beans.BeanError;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setModelo" id="ajaxmvc.modelo.acciones/AccionArchivo#setModelo(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSQL" id="ajaxmvc.modelo.acciones/AccionArchivo#setSQL(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSc" id="ajaxmvc.modelo.acciones/AccionArchivo#setSc(Ljavax.servlet.ServletContext;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setVista" id="ajaxmvc.modelo.acciones/AccionArchivo#setVista(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setVistaNoOk" id="ajaxmvc.modelo.acciones/AccionArchivo#setVistaNoOk(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setVistaOk" id="ajaxmvc.modelo.acciones/AccionArchivo#setVistaOk(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="AccionRegistrar" location="790,600" size="157,158" id="ajaxmvc.modelo.acciones/AccionRegistrar" runTimeClassModel="dS,vista,setSQL(Ljava.lang.String;),sc,modelo,ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="dS" id="ajaxmvc.modelo.acciones/AccionRegistrar#dS"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="modelo" id="ajaxmvc.modelo.acciones/AccionRegistrar#modelo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="sc" id="ajaxmvc.modelo.acciones/AccionRegistrar#sc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="vista" id="ajaxmvc.modelo.acciones/AccionRegistrar#vista"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="77,36">
+      <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ajaxmvc.modelo.acciones/AccionRegistrar#ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSQL" id="ajaxmvc.modelo.acciones/AccionRegistrar#setSQL(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
   <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=7;Product=eUML2"/>
   <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
     <leftRuler/>
