@@ -3,9 +3,7 @@
  */
 package ajaxmvc.modelo.acciones;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
