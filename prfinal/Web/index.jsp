@@ -115,10 +115,7 @@
 	<div id="login" style="display:none" name="submenu">
 		<jsp:include page="login.html" ></jsp:include>
 	</div>
-	<div id="archivo" style="display:none" name="submenu">
-		<jsp:include page="archivo.html" ></jsp:include>
-		
-	</div>
+	
 	
 	<div id="list"></div>
 	
