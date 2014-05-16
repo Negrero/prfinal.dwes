@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="controlador" size="819,605" id="ajaxmvc.controlador" metadata="uml2-1.0" initialized="true" scrolledY="198" tag="1000" key="32303037303533312D3130303020707266696E616C2F6E65677265726F">
-  <children xsi:type="editmodel:ClassEditModel" name="ApplicationServletContextListener" location="50,499" size="290,86" id="ajaxmvc.controlador/ApplicationServletContextListener" runTimeClassModel="contextInitialized(Ljavax.servlet.ServletContextEvent;),contextDestroyed(Ljavax.servlet.ServletContextEvent;)">
-    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-    <children xsi:type="editmodel:CompartmentEditModel" size="131,36">
-      <children xsi:type="editmodel:MethodEditModel" name="contextDestroyed" id="ajaxmvc.controlador/ApplicationServletContextListener#contextDestroyed(Ljavax.servlet.ServletContextEvent;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="contextInitialized" id="ajaxmvc.controlador/ApplicationServletContextListener#contextInitialized(Ljavax.servlet.ServletContextEvent;)"/>
-    </children>
-    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
-  </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1" name="AyudaSolicitud" location="318,345" size="202,104" id="ajaxmvc.controlador/AyudaSolicitud" runTimeClassModel="request,AyudaSolicitud(Ljavax.servlet.http.HttpServletRequest;),getAccion(Ljava.lang.String;)">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="controlador" size="819,605" id="ajaxmvc.controlador" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D3130303020707266696E616C2F6E65677265726F">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="AyudaSolicitud" location="318,345" size="202,104" id="ajaxmvc.controlador/AyudaSolicitud" runTimeClassModel="request,AyudaSolicitud(Ljavax.servlet.http.HttpServletRequest;),getAccion(Ljava.lang.String;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="179,18">
       <children xsi:type="editmodel:AttributeEditModel" name="request" id="ajaxmvc.controlador/AyudaSolicitud#request"/>
     </children>
@@ -18,12 +9,12 @@
       <children xsi:type="editmodel:MethodEditModel" name="getAccion" id="ajaxmvc.controlador/AyudaSolicitud#getAccion(Ljava.lang.String;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ajaxmvc.controlador/AyudaSolicitud-Soyatec::Import->ajaxmvc.controlador/Accion" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ajaxmvc.controlador/AyudaSolicitud-Soyatec::Import->ajaxmvc.controlador/Accion" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="51,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="67,0" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="55,189"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ajaxmvc.controlador/AyudaSolicitud-Standard::Call->ajaxmvc.controlador/FactoriaAcciones" source="//@children.1" target="//@children.4" targetEnd="//@children.1/@sourceConnections.1/@children.2" label="//@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ajaxmvc.controlador/AyudaSolicitud-Standard::Call->ajaxmvc.controlador/FactoriaAcciones" source="//@children.0" target="//@children.3" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="35,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="189,0" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="26,68"/>
@@ -39,19 +30,14 @@
       <children xsi:type="editmodel:MethodEditModel" name="init" id="ajaxmvc.controlador/Controlador#init(Ljavax.servlet.ServletConfig;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ajaxmvc.controlador/Controlador->Standard::Call" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="80,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="208,25" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,162"/>
-    </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ajaxmvc.controlador/Controlador->Standard::Call" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ajaxmvc.controlador/Controlador-Standard::Call->ajaxmvc.controlador/AyudaSolicitud*ajaxmvc.controlador/Controlador-Standard::Instantiate->ajaxmvc.controlador/AyudaSolicitud*ajaxmvc.controlador/Controlador-Soyatec::Import->ajaxmvc.controlador/AyudaSolicitud" source="//@children.1" target="//@children.0" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate, Import, Call»" size="147,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="191,104" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="14,0"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.1/@sourceConnections.0 //@children.2/@sourceConnections.0 //@children.4/@sourceConnections.0" name="Accion" location="330,50" size="112,189" id="ajaxmvc.controlador/Accion" runTimeClassModel="getVista(),setDS(Ljavax.sql.DataSource;),getError(),setSQL(Ljava.lang.String;),getModelo(),ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;),setSc(Ljavax.servlet.ServletContext;)">
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.0 //@children.3/@sourceConnections.0" name="Accion" location="330,50" size="112,189" id="ajaxmvc.controlador/Accion" runTimeClassModel="getVista(),setDS(Ljavax.sql.DataSource;),getError(),setSQL(Ljava.lang.String;),ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;),getModelo(),setSc(Ljavax.servlet.ServletContext;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="89,126">
       <children xsi:type="editmodel:MethodEditModel" name="ejecutar" id="ajaxmvc.controlador/Accion#ejecutar(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)"/>
@@ -65,13 +51,13 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.1" name="FactoriaAcciones" location="598,208" size="166,68" id="ajaxmvc.controlador/FactoriaAcciones" runTimeClassModel="creaAccion(Ljava.lang.String;Ljava.lang.String;)">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.1" name="FactoriaAcciones" location="598,208" size="166,68" id="ajaxmvc.controlador/FactoriaAcciones" runTimeClassModel="creaAccion(Ljava.lang.String;Ljava.lang.String;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="93,18">
       <children xsi:type="editmodel:MethodEditModel" name="creaAccion" id="ajaxmvc.controlador/FactoriaAcciones#creaAccion(Ljava.lang.String;Ljava.lang.String;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ajaxmvc.controlador/FactoriaAcciones-Soyatec::Import->ajaxmvc.controlador/Accion" source="//@children.4" target="//@children.3" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ajaxmvc.controlador/FactoriaAcciones-Soyatec::Import->ajaxmvc.controlador/Accion" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="51,13" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,15" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="112,173"/>
